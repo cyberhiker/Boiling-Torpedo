@@ -2,9 +2,10 @@ Option Explicit
 '==========================================================
 ' LANG : VBScript
 ' NAME : sydi-server.vbs
-' AUTHOR : Patrick Ogenstad (patrick.ogenstad@netsafe.se)
-' VERSION : 2.3
-' DATE : 2009-01-24
+' AUTHOR(S): Patrick Ogenstad (patrick.ogenstad@netsafe.se),
+'			 Chris Burton (cburton@redeyetek.com)
+' VERSION : 2.4
+' DATE : 2013-02-28
 ' Description : Creates a basic documentation for a Windows
 ' system, which you can use as a starting point.
 '
@@ -16,7 +17,7 @@ Option Explicit
 ' UPDATES : http://sydiproject.com
 '
 ' Running the script:
-' You have to have  Word installed on the computer you are running
+' You have to have Word installed on the computer you are running
 ' the script from. I would recommend running the script with cscript
 ' instead of wscript.
 ' For Options: cscript.exe sydi-server.vbs -h
@@ -24,6 +25,7 @@ Option Explicit
 '
 ' LICENSE :
 ' Copyright (c) 2004-2009 Patrick Ogenstad
+' Copyright (c) 2012-2013 Chris Burton
 ' All rights reserved.
 '
 ' Redistribution and use in source and binary forms, with or without
@@ -60,7 +62,7 @@ strDocumentAuthor = ""
 
 ' Script version
 Dim strScriptVersion
-strScriptVersion = "2.3"
+strScriptVersion = "2.4"
 
 ' Fonts to use in document
 Dim strFontBodyText, strFontHeading1, strFontHeading2, strFontHeading3, strFontHeading4, strFontTitle, strFontTOC1, strFontTOC2, strFontTOC3
@@ -4262,7 +4264,7 @@ Function Scrub4XML(strInput)
 		strInput = Replace(strInput,"™","") ' Breaks SYDI-Overview
 		strInput = Replace(strInput,"©","") ' Breaks SYDI-Overview
 		strInput = Replace(strInput,"–","-") '  Can break XML files with SYDI-Transform
-		
+		strInput = Trim(strInput)
 	End If
 	Scrub4XML = strInput
 End Function ' Scrub4XML

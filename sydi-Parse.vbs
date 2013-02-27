@@ -2,7 +2,7 @@ Set oFSO = CreateObject("Scripting.FileSystemObject")
 Set oConn = CreateObject("ADODB.Connection")
 RunningDir = oFSO.GetFile(Wscript.ScriptFullName).ParentFolder
 
-strConn = "DRIVER=SQLite3 ODBC Driver;Database=" & RunningDir & "\BaseConfig.s3db;"
+strConn = "DRIVER={SQLite3 ODBC Driver};Database=" & RunningDir & "\BaseConfig.s3db;"
 '"LongNames=0;Timeout=1000;NoTXN=0;SyncPragma=NORMAL;StepAPI=0;"
 oConn.Open(strConn)
 
@@ -19,6 +19,22 @@ End If
 
 Set TheDirectory = oFSO.GetFolder(BaseDirectory)
 Set oFiles = TheDirectory.Files
+
+'Initialize a Blank Database
+TableSQL = "CREATE TABLE if not exists [Targets] ('TargetID' INTEGER PRIMARY KEY AUTOINCREMENT, " & _
+			"'IPAddress' text, 'Hostname' text, 'OS' text, 'SerialNumber' text, 'Environment' text)"
+oConn.Execute(TableSQL)
+
+TableSQL = "CREATE TABLE if not exists [Platforms] ('PlatformID' INTEGER PRIMARY KEY AUTOINCREMENT, " & _
+			"'SoftwareName' text, 'Manufacturer' text, 'Version' text)"
+oConn.Execute(TableSQL)
+
+TableSQL = "CREATE TABLE if not exists [CrossReference] ('RefID' INTEGER PRIMARY KEY AUTOINCREMENT, " & _
+			"'TargetID' int, 'PlatformID' int)"
+oConn.Execute(TableSQL)
+
+ViewSQL = "CREATE VIEW if not exists [Combined] (SELECT )"
+oConn.Execute(ViewSQL)
 
 i = 0
 For Each File In oFiles
@@ -56,7 +72,8 @@ For Each File In oFiles
 		
 		TargetID = TargetRS(0)
 		
-		Set AppNodeList = root.SelectNodes("/computer/installedapplications/regapplication")
+		Set InstallationNode = root.SelectSingleNode("/computer/installedapplications")
+		Set AppNodeList = InstallationNode.ChildNodes
 
 		For i = 0 to AppNodeList.length -1
 			PlatformID = 0
