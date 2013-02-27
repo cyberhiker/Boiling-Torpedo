@@ -1,12 +1,4 @@
 
 .DS_Store
 
-*.db
-
-*.cmd
-
 *.csv
-
-*.xml
-
-*.s3db

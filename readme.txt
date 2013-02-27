@@ -228,29 +228,28 @@ Use quotes if you have spaces in your path.
 5.2.3. FlexWiki
 ---------------
 
-Please note FlexWiki is supported but unmaintained. This is because I
-(Patrick) don't use it, if you want support for it let me know.
-
-The XML files can be exported to FlexWiki (http://www.flexwiki.com/)
-
-What you do is first create the XML file
-
-cscript.exe sydi-server.vbs -tServer1 -ex -oServer1.xml
-
-Then you use the sydi-transform script to create a FlexWiki file
-
-cscript.exe sydi-transform.vbs -xServer1.xml -sflexwikiserver.xsl -oServer1.wiki
-
-Then you just drop the Server1.wiki file to your FlexWiki folder.
-
+Is no long supported or maintained.  FlexWiki development stopped some time ago
+and there is no longer a need for it here.
 
 5.3. Running against multiple computers
 ---------------------------------------
 
-If you want to target multiple computers you should use the script
+You have one of two options:
+
+1. If you want to target multiple computers you should use the script
 sydi-wrapper.vbs. You will have to edit the script to specify the location
 of sydi-server.vbs, where you want to place the output files and
 which options you want to use from SYDI-Server.
+
+2. You could also use BulkComputers.cmd.  This allows you to specify a list in 
+a csv file with individual credentials (for environments with or without a domain).  
+Add your server list and applicable credentials to the csv and open a command window
+and run the following:
+
+	BulkComputers ServerList.csv
+
+It will place all the results in a sibling directory (..\SYDI-Results) by however you
+referred to the server in the CSV.
 
 6. Known issues
 ---------------

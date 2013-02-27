@@ -1,0 +1,679 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<computer>
+ <generated script="sydi-server" version="2.3" scantime="9/3/2012 8:26:24 PM" />
+ <system name="DEVWORKSTATION" />
+ <operatingsystem name="Microsoft Windows 7 Ultimate " servicepack="Service Pack 1" />
+ <fqdn name="devworkstation." />
+ <roles>
+  <role name="File" />
+ </roles>
+ <machineinfo manufacturer="Dell Inc." productname="Latitude D630                   " identifyingnumber="29MRGG1" chassis="Portable" />
+ <processor count="1" name="Intel(R) Core(TM)2 Duo CPU     T7250  @ 2.00GHz" description="Intel64 Family 6 Model 15 Stepping 13" speed="2001" l2cachesize="2048" externalclock="200" htsystem="False" />
+ <memory totalsize="4086">
+  <memorybank bank="" capacity="2048" formfactor="DIMM" memorytype="DDR" />
+  <memorybank bank="" capacity="2048" formfactor="DIMM" memorytype="DDR" />
+ </memory>
+ <win32_cdromdrive>
+  <cdrom name="HL-DT-ST DVD+-RW GSA-T21N ATA Device" drive="D:" manufacturer="(Standard CD-ROM drives)" />
+ </win32_cdromdrive>
+ <videocontroller>
+  <adapter name="Mobile Intel(R) 965 Express Chipset Family" adapterram="384" compatibility="Intel Corporation" />
+  <adapter name="Mobile Intel(R) 965 Express Chipset Family" adapterram="0" compatibility="Intel Corporation" />
+ </videocontroller>
+ <win32_sounddevice>
+  <card name="High Definition Audio Device" manufacturer="Microsoft" />
+ </win32_sounddevice>
+ <bios version="DELL   - 27d80403" smbiosversion="A09" smbiosmajorversion="2" smbbiosminorversion="4">
+  <bioscharacteristics id="4" name="ISA is supported" />
+  <bioscharacteristics id="7" name="PCI is supported" />
+  <bioscharacteristics id="8" name="PC Card (PCMCIA) is supported" />
+  <bioscharacteristics id="9" name="Plug and Play is supported" />
+  <bioscharacteristics id="11" name="BIOS is Upgradable (Flash)" />
+  <bioscharacteristics id="12" name="BIOS shadowing is allowed" />
+  <bioscharacteristics id="15" name="Boot from CD is supported" />
+  <bioscharacteristics id="16" name="Selectable Boot is supported" />
+  <bioscharacteristics id="24" name="13h - 3.5 / 720 KB Floppy Services are supported" />
+  <bioscharacteristics id="26" name="Int 5h, Print Screen Service is supported" />
+  <bioscharacteristics id="27" name="Int 9h, 8042 Keyboard services are supported" />
+  <bioscharacteristics id="28" name="Int 14h, Serial Services are supported" />
+  <bioscharacteristics id="29" name="Int 17h, printer services are supported" />
+  <bioscharacteristics id="30" name="Int 10h, CGA/Mono Video Services are supported" />
+  <bioscharacteristics id="32" name="ACPI supported" />
+  <bioscharacteristics id="33" name="USB Legacy is supported" />
+  <bioscharacteristics id="34" name="AGP is supported" />
+  <bioscharacteristics id="39" name="Smart Battery supported" />
+  <bioscharacteristics id="40" name="Unknown (Undocumented)" />
+  <bioscharacteristics id="41" name="Unknown (Undocumented)" />
+  <bioscharacteristics id="42" name="Unknown (Undocumented)" />
+  <bioscharacteristics id="56" name="Unknown (Undocumented)" />
+  <bioscharacteristics id="59" name="Unknown (Undocumented)" />
+  <bioscharacteristics id="72" name="Unknown (Undocumented)" />
+  <bioscharacteristics id="75" name="Unknown (Undocumented)" />
+ </bios>
+ <osconfiguration osname="Microsoft Windows 7 Ultimate " computerrole="Standalone Workstation" domainname="WORKGROUP" domaintype="workgroup" windowslocation="C:\Windows" oslanguage="English" installdate="2/3/2012 6:23:06 PM" />
+ <lastuser name="chris" />
+ <windowscomponents>
+  <component name="Windows Media Player (from Start Menu and Desktop)" class="2200" classname="" level="1" />
+ </windowscomponents>
+ <patches>
+  <patch description="Update" hotfixid="982861" installdate="2/3/2012" />
+  <patch description="Update" hotfixid="KB971033" installdate="2/3/2012" />
+  <patch description="Security Update" hotfixid="KB2305420" installdate="2/3/2012" />
+  <patch description="Security Update" hotfixid="KB2393802" installdate="2/3/2012" />
+  <patch description="Security Update" hotfixid="KB2425227" installdate="2/3/2012" />
+  <patch description="Security Update" hotfixid="KB2479943" installdate="2/3/2012" />
+  <patch description="Update" hotfixid="KB2484033" installdate="2/3/2012" />
+  <patch description="Update" hotfixid="KB2488113" installdate="2/3/2012" />
+  <patch description="Security Update" hotfixid="KB2491683" installdate="2/3/2012" />
+  <patch description="Update" hotfixid="KB2492386" installdate="2/3/2012" />
+  <patch description="Security Update" hotfixid="KB2503665" installdate="2/3/2012" />
+  <patch description="Update" hotfixid="KB2505438" installdate="2/10/2012" />
+  <patch description="Update" hotfixid="KB2506014" installdate="2/3/2012" />
+  <patch description="Security Update" hotfixid="KB2506212" installdate="2/3/2012" />
+  <patch description="Update" hotfixid="KB2506928" installdate="2/3/2012" />
+  <patch description="Security Update" hotfixid="KB2507618" installdate="2/3/2012" />
+  <patch description="Security Update" hotfixid="KB2509553" installdate="2/3/2012" />
+  <patch description="Update" hotfixid="KB2511250" installdate="2/3/2012" />
+  <patch description="Security Update" hotfixid="KB2511455" installdate="2/3/2012" />
+  <patch description="Update" hotfixid="KB2515325" installdate="2/3/2012" />
+  <patch description="Security Update" hotfixid="KB2518869" installdate="2/11/2012" />
+  <patch description="Update" hotfixid="KB2522422" installdate="2/3/2012" />
+  <patch description="Update" hotfixid="KB2529073" installdate="2/5/2012" />
+  <patch description="Security Update" hotfixid="KB2532531" installdate="2/5/2012" />
+  <patch description="Update" hotfixid="KB2533552" installdate="2/3/2012" />
+  <patch description="Security Update" hotfixid="KB2536275" installdate="2/3/2012" />
+  <patch description="Security Update" hotfixid="KB2536276" installdate="2/3/2012" />
+  <patch description="Security Update" hotfixid="KB2539635" installdate="2/11/2012" />
+  <patch description="Update" hotfixid="KB2541014" installdate="2/3/2012" />
+  <patch description="Security Update" hotfixid="KB2544893" installdate="2/3/2012" />
+  <patch description="Update" hotfixid="KB2545698" installdate="2/3/2012" />
+  <patch description="Update" hotfixid="KB2547666" installdate="2/3/2012" />
+  <patch description="Update" hotfixid="KB2552343" installdate="2/3/2012" />
+  <patch description="Security Update" hotfixid="KB2556532" installdate="2/3/2012" />
+  <patch description="Security Update" hotfixid="KB2560656" installdate="2/3/2012" />
+  <patch description="Update" hotfixid="KB2563227" installdate="2/3/2012" />
+  <patch description="Security Update" hotfixid="KB2564958" installdate="2/3/2012" />
+  <patch description="Security Update" hotfixid="KB2567680" installdate="2/3/2012" />
+  <patch description="Security Update" hotfixid="KB2570947" installdate="2/3/2012" />
+  <patch description="Security Update" hotfixid="KB2572077" installdate="2/11/2012" />
+  <patch description="Security Update" hotfixid="KB2579686" installdate="2/3/2012" />
+  <patch description="Security Update" hotfixid="KB2584146" installdate="2/3/2012" />
+  <patch description="Security Update" hotfixid="KB2585542" installdate="2/3/2012" />
+  <patch description="Security Update" hotfixid="KB2588516" installdate="2/3/2012" />
+  <patch description="Update" hotfixid="KB2603229" installdate="2/3/2012" />
+  <patch description="Security Update" hotfixid="KB2604115" installdate="5/10/2012" />
+  <patch description="Update" hotfixid="KB2607576" installdate="2/3/2012" />
+  <patch description="Security Update" hotfixid="KB2618451" installdate="2/3/2012" />
+  <patch description="Security Update" hotfixid="KB2619339" installdate="2/3/2012" />
+  <patch description="Security Update" hotfixid="KB2620704" installdate="2/3/2012" />
+  <patch description="Security Update" hotfixid="KB2620712" installdate="2/3/2012" />
+  <patch description="Security Update" hotfixid="KB2621440" installdate="3/31/2012" />
+  <patch description="Security Update" hotfixid="KB2631813" installdate="2/3/2012" />
+  <patch description="Security Update" hotfixid="KB2633873" installdate="2/15/2012" />
+  <patch description="Update" hotfixid="KB2633952" installdate="2/3/2012" />
+  <patch description="Hotfix" hotfixid="KB2639308" installdate="3/31/2012" />
+  <patch description="Security Update" hotfixid="KB2639417" installdate="2/3/2012" />
+  <patch description="Update" hotfixid="KB2640148" installdate="2/15/2012" />
+  <patch description="Security Update" hotfixid="KB2641653" installdate="3/31/2012" />
+  <patch description="Update" hotfixid="KB2641690" installdate="2/3/2012" />
+  <patch description="Security Update" hotfixid="KB2644615" installdate="2/3/2012" />
+  <patch description="Security Update" hotfixid="KB2645640" installdate="2/15/2012" />
+  <patch description="Security Update" hotfixid="KB2647516" installdate="2/15/2012" />
+  <patch description="Security Update" hotfixid="KB2647518" installdate="3/31/2012" />
+  <patch description="Update" hotfixid="KB2647753" installdate="8/15/2012" />
+  <patch description="Security Update" hotfixid="KB2653956" installdate="4/12/2012" />
+  <patch description="Security Update" hotfixid="KB2654428" installdate="2/15/2012" />
+  <patch description="Security Update" hotfixid="KB2655992" installdate="7/11/2012" />
+  <patch description="Security Update" hotfixid="KB2656356" installdate="2/11/2012" />
+  <patch description="Security Update" hotfixid="KB2656373" installdate="6/14/2012" />
+  <patch description="Security Update" hotfixid="KB2656411" installdate="5/10/2012" />
+  <patch description="Security Update" hotfixid="KB2658846" installdate="5/10/2012" />
+  <patch description="Security Update" hotfixid="KB2659262" installdate="5/10/2012" />
+  <patch description="Update" hotfixid="KB2660075" installdate="2/15/2012" />
+  <patch description="Security Update" hotfixid="KB2660465" installdate="2/15/2012" />
+  <patch description="Security Update" hotfixid="KB2660649" installdate="5/10/2012" />
+  <patch description="Security Update" hotfixid="KB2665364" installdate="3/31/2012" />
+  <patch description="Security Update" hotfixid="KB2667402" installdate="6/14/2012" />
+  <patch description="Security Update" hotfixid="KB2675157" installdate="4/12/2012" />
+  <patch description="Security Update" hotfixid="KB2676562" installdate="5/10/2012" />
+  <patch description="Update" hotfixid="KB2677070" installdate="6/14/2012" />
+  <patch description="Hotfix" hotfixid="KB2679255" installdate="4/12/2012" />
+  <patch description="Security Update" hotfixid="KB2685939" installdate="6/14/2012" />
+  <patch description="Security Update" hotfixid="KB2686831" installdate="6/14/2012" />
+  <patch description="Security Update" hotfixid="KB2688338" installdate="5/10/2012" />
+  <patch description="Security Update" hotfixid="KB2690533" installdate="5/10/2012" />
+  <patch description="Security Update" hotfixid="KB2691442" installdate="7/11/2012" />
+  <patch description="Security Update" hotfixid="KB2695962" installdate="5/10/2012" />
+  <patch description="Security Update" hotfixid="KB2698365" installdate="7/11/2012" />
+  <patch description="Update" hotfixid="KB2699779" installdate="6/14/2012" />
+  <patch description="Security Update" hotfixid="KB2699988" installdate="6/14/2012" />
+  <patch description="Security Update" hotfixid="KB2705219" installdate="8/15/2012" />
+  <patch description="Security Update" hotfixid="KB2709162" installdate="6/14/2012" />
+  <patch description="Update" hotfixid="KB2709630" installdate="6/14/2012" />
+  <patch description="Security Update" hotfixid="KB2709715" installdate="6/14/2012" />
+  <patch description="Update" hotfixid="KB2709981" installdate="6/29/2012" />
+  <patch description="Security Update" hotfixid="KB2712808" installdate="8/15/2012" />
+  <patch description="Security Update" hotfixid="KB2718523" installdate="7/11/2012" />
+  <patch description="Update" hotfixid="KB2718704" installdate="6/4/2012" />
+  <patch description="Security Update" hotfixid="KB2719177" installdate="7/11/2012" />
+  <patch description="Security Update" hotfixid="KB2719985" installdate="7/11/2012" />
+  <patch description="Security Update" hotfixid="KB2722913" installdate="8/15/2012" />
+  <patch description="Update" hotfixid="KB2729094" installdate="8/15/2012" />
+  <patch description="Security Update" hotfixid="KB2731847" installdate="8/15/2012" />
+  <patch description="Hotfix" hotfixid="KB2732487" installdate="8/15/2012" />
+  <patch description="Update" hotfixid="KB2732500" installdate="8/15/2012" />
+  <patch description="Update" hotfixid="KB958488" installdate="2/3/2012" />
+  <patch description="Update" hotfixid="KB976902" installdate="2/10/2012" />
+  <patch description="Service Pack" hotfixid="KB976932" installdate="2/10/2012" />
+  <patch description="Update" hotfixid="KB982018" installdate="2/5/2012" />
+ </patches>
+ <installedapplications>
+  <msiapplication productname="ActiveState Komodo Edit 7.0.2" vendor="ActiveState Software Inc." version="7.0.2" installdate="20120608" />
+  <msiapplication productname="Crystal Reports for Visual Studio" vendor="SAP" version="12.51.0.240" installdate="20120209" />
+  <msiapplication productname="Java Auto Updater" vendor="Sun Microsystems, Inc." version="2.1.6.0" installdate="20120607" />
+  <msiapplication productname="Java(TM) 7 Update 5" vendor="Oracle" version="7.0.40" installdate="20120607" />
+  <msiapplication productname="JavaFX 2.1.1" vendor="Oracle Corporation" version="2.1.1" installdate="20120615" />
+  <msiapplication productname="Microsoft .NET Framework 4 Client Profile" vendor="Microsoft Corporation" version="4.0.30319" installdate="20120614" />
+  <msiapplication productname="Microsoft .NET Framework 4 Extended" vendor="Microsoft Corporation" version="4.0.30319" installdate="20120330" />
+  <msiapplication productname="Microsoft .NET Framework 4 Multi-Targeting Pack" vendor="Microsoft Corporation" version="4.0.30319" installdate="20120209" />
+  <msiapplication productname="Microsoft Application Error Reporting" vendor="Microsoft Corporation" version="12.0.6012.5000" installdate="20120209" />
+  <msiapplication productname="Microsoft Application Error Reporting" vendor="Microsoft Corporation" version="12.0.6015.5000" installdate="20120209" />
+  <msiapplication productname="Microsoft ASP.NET MVC 2" vendor="Microsoft Corporation" version="2.0.50217.0" installdate="20120209" />
+  <msiapplication productname="Microsoft ASP.NET MVC 2 - Visual Studio 2010 Tools" vendor="Microsoft Corporation" version="2.0.50217.0" installdate="20120209" />
+  <msiapplication productname="Microsoft Help Viewer 1.1" vendor="Microsoft Corporation" version="1.1.40219" installdate="20120629" />
+  <msiapplication productname="Microsoft Office Access MUI (English) 2010" vendor="Microsoft Corporation" version="14.0.6029.1000" installdate="20120606" />
+  <msiapplication productname="Microsoft Office Access Setup Metadata MUI (English) 2010" vendor="Microsoft Corporation" version="14.0.6029.1000" installdate="20120606" />
+  <msiapplication productname="Microsoft Office Excel MUI (English) 2010" vendor="Microsoft Corporation" version="14.0.6029.1000" installdate="20120606" />
+  <msiapplication productname="Microsoft Office Groove MUI (English) 2010" vendor="Microsoft Corporation" version="14.0.6029.1000" installdate="20120606" />
+  <msiapplication productname="Microsoft Office InfoPath MUI (English) 2010" vendor="Microsoft Corporation" version="14.0.6029.1000" installdate="20120606" />
+  <msiapplication productname="Microsoft Office Office 64-bit Components 2010" vendor="Microsoft Corporation" version="14.0.6029.1000" installdate="20120815" />
+  <msiapplication productname="Microsoft Office OneNote MUI (English) 2010" vendor="Microsoft Corporation" version="14.0.6029.1000" installdate="20120606" />
+  <msiapplication productname="Microsoft Office Outlook MUI (English) 2010" vendor="Microsoft Corporation" version="14.0.6029.1000" installdate="20120606" />
+  <msiapplication productname="Microsoft Office PowerPoint MUI (English) 2010" vendor="Microsoft Corporation" version="14.0.6029.1000" installdate="20120606" />
+  <msiapplication productname="Microsoft Office Professional Plus 2010" vendor="Microsoft Corporation" version="14.0.6029.1000" installdate="20120815" />
+  <msiapplication productname="Microsoft Office Proof (English) 2010" vendor="Microsoft Corporation" version="14.0.6029.1000" installdate="20120815" />
+  <msiapplication productname="Microsoft Office Proof (French) 2010" vendor="Microsoft Corporation" version="14.0.6029.1000" installdate="20120606" />
+  <msiapplication productname="Microsoft Office Proof (Spanish) 2010" vendor="Microsoft Corporation" version="14.0.6029.1000" installdate="20120606" />
+  <msiapplication productname="Microsoft Office Proofing (English) 2010" vendor="Microsoft Corporation" version="14.0.6029.1000" installdate="20120606" />
+  <msiapplication productname="Microsoft Office Publisher MUI (English) 2010" vendor="Microsoft Corporation" version="14.0.6029.1000" installdate="20120606" />
+  <msiapplication productname="Microsoft Office Shared 64-bit MUI (English) 2010" vendor="Microsoft Corporation" version="14.0.6029.1000" installdate="20120606" />
+  <msiapplication productname="Microsoft Office Shared 64-bit Setup Metadata MUI (English) 2010" vendor="Microsoft Corporation" version="14.0.6029.1000" installdate="20120606" />
+  <msiapplication productname="Microsoft Office Shared MUI (English) 2010" vendor="Microsoft Corporation" version="14.0.6029.1000" installdate="20120606" />
+  <msiapplication productname="Microsoft Office Shared Setup Metadata MUI (English) 2010" vendor="Microsoft Corporation" version="14.0.6029.1000" installdate="20120606" />
+  <msiapplication productname="Microsoft Office Word MUI (English) 2010" vendor="Microsoft Corporation" version="14.0.6029.1000" installdate="20120606" />
+  <msiapplication productname="Microsoft Silverlight" vendor="Microsoft Corporation" version="4.1.10329.0" installdate="20120605" />
+  <msiapplication productname="Microsoft Silverlight 3 SDK" vendor="Microsoft Corporation" version="3.0.40818.0" installdate="20120209" />
+  <msiapplication productname="Microsoft Silverlight 4 SDK" vendor="Microsoft Corporation" version="4.0.50826.0" installdate="20120629" />
+  <msiapplication productname="Microsoft SQL Server 2008 Management Studio" vendor="Microsoft Corporation" version="10.0.1600.22" installdate="20120629" />
+  <msiapplication productname="Microsoft SQL Server 2008 Management Studio" vendor="Microsoft Corporation" version="10.0.1600.22" installdate="20120629" />
+  <msiapplication productname="Microsoft SQL Server 2008 Policies" vendor="Microsoft Corporation" version="10.0.1600.22" installdate="20120629" />
+  <msiapplication productname="Microsoft SQL Server 2008 R2 Data-Tier Application Framework" vendor="Microsoft Corporation" version="10.50.1750.9" installdate="20120629" />
+  <msiapplication productname="Microsoft SQL Server 2008 R2 Data-Tier Application Project" vendor="Microsoft Corporation" version="10.50.1750.9" installdate="20120629" />
+  <msiapplication productname="Microsoft SQL Server 2008 R2 Management Objects" vendor="Microsoft Corporation" version="10.50.1750.9" installdate="20120629" />
+  <msiapplication productname="Microsoft SQL Server 2008 R2 Management Objects (x64)" vendor="Microsoft Corporation" version="10.50.1750.9" installdate="20120629" />
+  <msiapplication productname="Microsoft SQL Server 2008 R2 Native Client" vendor="Microsoft Corporation" version="10.51.2500.0" installdate="20120629" />
+  <msiapplication productname="Microsoft SQL Server 2008 R2 RsFx Driver" vendor="Microsoft Corporation" version="10.51.2500.0" installdate="20120629" />
+  <msiapplication productname="Microsoft SQL Server 2008 R2 Setup (English)" vendor="Microsoft Corporation" version="10.51.2500.0" installdate="20120629" />
+  <msiapplication productname="Microsoft SQL Server 2008 R2 Transact-SQL Language Service" vendor="Microsoft Corporation" version="10.50.1750.9" installdate="20120629" />
+  <msiapplication productname="Microsoft SQL Server 2008 RsFx Driver" vendor="Microsoft Corporation" version="10.3.5500.0" installdate="20120629" />
+  <msiapplication productname="Microsoft SQL Server 2008 Setup Support Files " vendor="Microsoft Corporation" version="10.3.5500.0" installdate="20120629" />
+  <msiapplication productname="Microsoft SQL Server Browser" vendor="Microsoft Corporation" version="10.51.2500.0" installdate="20120629" />
+  <msiapplication productname="Microsoft SQL Server Compact 3.5 SP1 Query Tools English" vendor="Microsoft Corporation" version="3.5.5692.0" installdate="20120629" />
+  <msiapplication productname="Microsoft SQL Server Compact 3.5 SP2 ENU" vendor="Microsoft Corporation" version="3.5.8080.0" installdate="20120209" />
+  <msiapplication productname="Microsoft SQL Server Compact 3.5 SP2 x64 ENU" vendor="Microsoft Corporation" version="3.5.8080.0" installdate="20120209" />
+  <msiapplication productname="Microsoft SQL Server Database Publishing Wizard 1.4" vendor="Microsoft Corporation" version="10.1.2512.8" installdate="20120209" />
+  <msiapplication productname="Microsoft SQL Server System CLR Types" vendor="Microsoft Corporation" version="10.50.1750.9" installdate="20120629" />
+  <msiapplication productname="Microsoft SQL Server System CLR Types (x64)" vendor="Microsoft Corporation" version="10.50.1750.9" installdate="20120629" />
+  <msiapplication productname="Microsoft SQL Server VSS Writer" vendor="Microsoft Corporation" version="10.51.2500.0" installdate="20120629" />
+  <msiapplication productname="Microsoft Sync Framework Runtime v1.0 SP1 (x64)" vendor="Microsoft Corporation" version="1.0.3010.0" installdate="20120209" />
+  <msiapplication productname="Microsoft Sync Framework SDK v1.0 SP1" vendor="Microsoft Corporation" version="1.0.3010.0" installdate="20120209" />
+  <msiapplication productname="Microsoft Sync Framework Services v1.0 SP1 (x64)" vendor="Microsoft Corporation" version="1.0.3010.0" installdate="20120209" />
+  <msiapplication productname="Microsoft Sync Services for ADO.NET v2.0 SP1 (x64)" vendor="Microsoft Corporation" version="2.0.3010.0" installdate="20120209" />
+  <msiapplication productname="Microsoft Team Foundation Server 2010 Object Model - ENU" vendor="Microsoft Corporation" version="10.0.40219" installdate="20120629" />
+  <msiapplication productname="Microsoft Visual C++  Compilers 2010 Standard - enu - x64" vendor="Microsoft Corporation" version="10.0.40219" installdate="20120629" />
+  <msiapplication productname="Microsoft Visual C++  Compilers 2010 Standard - enu - x86" vendor="Microsoft Corporation" version="10.0.40219" installdate="20120629" />
+  <msiapplication productname="Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.17" vendor="Microsoft Corporation" version="9.0.30729" installdate="20120203" />
+  <msiapplication productname="Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.4974" vendor="Microsoft Corporation" version="9.0.30729.4974" installdate="20120209" />
+  <msiapplication productname="Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.6161" vendor="Microsoft Corporation" version="9.0.30729.6161" installdate="20120605" />
+  <msiapplication productname="Microsoft Visual C++ 2010  x64 Designtime - 10.0.30319" vendor="Microsoft Corporation" version="10.0.30319" installdate="20120209" />
+  <msiapplication productname="Microsoft Visual C++ 2010  x64 Runtime - 10.0.40219" vendor="Microsoft Corporation" version="10.0.40219" installdate="20120629" />
+  <msiapplication productname="Microsoft Visual C++ 2010  x86 Redistributable - 10.0.30319" vendor="Microsoft Corporation" version="10.0.30319" installdate="20120625" />
+  <msiapplication productname="Microsoft Visual C++ 2010  x86 Runtime - 10.0.40219" vendor="Microsoft Corporation" version="10.0.40219" installdate="20120629" />
+  <msiapplication productname="Microsoft Visual Studio 2010 ADO.NET Entity Framework Tools" vendor="Microsoft Corporation" version="10.0.40219" installdate="20120629" />
+  <msiapplication productname="Microsoft Visual Studio 2010 IntelliTrace Collection (x64)" vendor="Microsoft Corporation" version="10.0.40219" installdate="20120629" />
+  <msiapplication productname="Microsoft Visual Studio 2010 Office Developer Tools (x64)" vendor="Microsoft Corporation" version="10.0.40219" installdate="20120629" />
+  <msiapplication productname="Microsoft Visual Studio 2010 Performance Collection Tools SP1 - ENU" vendor="Microsoft Corporation" version="10.0.40219" installdate="20120629" />
+  <msiapplication productname="Microsoft Visual Studio 2010 Service Pack 1" vendor="Microsoft Corporation" version="10.0.40219" installdate="20120629" />
+  <msiapplication productname="Microsoft Visual Studio 2010 Tools for Office Runtime (x64)" vendor="Microsoft Corporation" version="10.0.31010" installdate="20120629" />
+  <msiapplication productname="Microsoft Visual Studio 2010 Tools for Office Runtime (x64)" vendor="Microsoft Corporation" version="10.0.31124" installdate="20120605" />
+  <msiapplication productname="Microsoft Visual Studio 2010 Ultimate - ENU" vendor="Microsoft Corporation" version="10.0.40219" installdate="20120701" />
+  <msiapplication productname="Microsoft Visual Studio Macro Tools" vendor="Microsoft Corporation" version="9.0.30729" installdate="20120605" />
+  <msiapplication productname="Microsoft Visual Studio Tools for Applications 2.0 - ENU" vendor="Microsoft Corporation" version="9.0.30729" installdate="20120701" />
+  <msiapplication productname="Python Tools for Visual Studio" vendor="Microsoft Corporation" version="1.1.50530.0" installdate="20120618" />
+  <msiapplication productname="SharpDevelop 4.2" vendor="ic#code" version="4.2.8805" installdate="20120627" />
+  <msiapplication productname="SQL Server 2008 R2 SP1 Common Files" vendor="Microsoft Corporation" version="10.51.2500.0" installdate="20120629" />
+  <msiapplication productname="SQL Server 2008 R2 SP1 Common Files" vendor="Microsoft Corporation" version="10.51.2500.0" installdate="20120629" />
+  <msiapplication productname="SQL Server 2008 R2 SP1 Database Engine Services" vendor="Microsoft Corporation" version="10.51.2500.0" installdate="20120629" />
+  <msiapplication productname="SQL Server 2008 R2 SP1 Database Engine Services" vendor="Microsoft Corporation" version="10.51.2500.0" installdate="20120629" />
+  <msiapplication productname="SQL Server 2008 R2 SP1 Database Engine Shared" vendor="Microsoft Corporation" version="10.51.2500.0" installdate="20120629" />
+  <msiapplication productname="SQL Server 2008 R2 SP1 Database Engine Shared" vendor="Microsoft Corporation" version="10.51.2500.0" installdate="20120629" />
+  <msiapplication productname="Sql Server Customer Experience Improvement Program" vendor="Microsoft Corporation" version="10.50.1600.1" installdate="20120629" />
+  <msiapplication productname="TortoiseGit 1.7.10.0 (64 bit)" vendor="TortoiseGit" version="1.7.10.0" installdate="20120606" />
+  <msiapplication productname="TurtleMine (v1.2.0.1)" vendor="TurtleMine" version="1.2.01" installdate="20120621" />
+  <msiapplication productname="Visual Studio 2010 Prerequisites - English" vendor="Microsoft Corporation" version="10.0.40219" installdate="20120629" />
+  <msiapplication productname="Visual Studio 2010 Tools for SQL Server Compact 3.5 SP2 ENU" vendor="Microsoft Corporation" version="4.0.8080.0" installdate="20120209" />
+  <msiapplication productname="WCF RIA Services V1.0 SP1" vendor="Microsoft Corporation" version="4.1.60114.0" installdate="20120629" />
+  <msiapplication productname="Web Deployment Tool" vendor="Microsoft Corporation" version="1.1.0618" installdate="20120209" />
+  <msiapplication productname="WinZip 15.0" vendor="WinZip Computing, S.L. " version="15.0.9411" installdate="20120402" />
+  <regapplication productname="Adobe Flash Player 11 ActiveX 64-bit" version="11.1.102.55" />
+  <regapplication productname="Intel(R) Graphics Media Accelerator Driver" version="8.15.10.1930" />
+  <regapplication productname="Microsoft .NET Framework 4 Client Profile" version="4.0.30319" />
+  <regapplication productname="Microsoft .NET Framework 4 Extended" version="4.0.30319" />
+  <regapplication productname="Microsoft Help Viewer 1.1" version="1.1.40219" />
+  <regapplication productname="Microsoft SQL Server 2008 (64-bit)" version="" />
+  <regapplication productname="Microsoft SQL Server 2008 R2 (64-bit)" version="" />
+  <regapplication productname="Microsoft SQL Server 2008 R2 (64-bit)" version="" />
+  <regapplication productname="Microsoft Team Foundation Server 2010 Object Model - ENU" version="10.0.40219" />
+  <regapplication productname="Microsoft Visual Studio 2010 Tools for Office Runtime (x64)" version="10.0.31007" />
+  <regapplication productname="UltraVnc" version="1.0.9.6.1" />
+  <productkey productname="Windows 7 Ultimate" productkey="342DG-6YJR8-X92GV-V7DCV-P4K27" />
+ </installedapplications>
+ <storage>
+  <drives name="Hitachi HTS542512K9SA00 ATA Device" deviceid="\\.\PHYSICALDRIVE0" interface="IDE" totaldisksize="111.79">
+   <partition name="C:" size="111.69" freespace="13.55" filesystem="NTFS" />
+  </drives>
+ </storage>
+ <network>
+  <adapter description="Broadcom NetXtreme 57xx Gigabit Controller" macaddress="00:1C:23:43:E4:A7">
+   <ip address="192.168.0.2" subnetmask="255.255.255.0" />
+   <ip address="fe80::8471:3dda:6361:5863" subnetmask="64" />
+   <gateway address="192.168.0.1" />
+   <gateway address="fe80::cd57:2389:cb23:4fc" />
+   <dnsserver address="192.168.0.1" />
+   <dnsdomain name="" />
+   <dhcpserver address="192.168.0.1" />
+  </adapter>
+  <adapter description="Dell Wireless 1395 WLAN Mini-Card" macaddress="00:16:44:C8:D6:FC">
+   <ip address="192.168.0.45" subnetmask="255.255.255.0" />
+   <ip address="fe80::ad09:55a9:9563:839b" subnetmask="64" />
+   <gateway address="192.168.0.1" />
+   <gateway address="fe80::cd57:2389:cb23:4fc" />
+   <dnsserver address="192.168.0.1" />
+   <dnsdomain name="" />
+   <dhcpserver address="192.168.0.1" />
+  </adapter>
+  <ip4routes>
+   <route destination="0.0.0.0" mask="0.0.0.0" nexthop="192.168.0.1" />
+   <route destination="0.0.0.0" mask="0.0.0.0" nexthop="192.168.0.1" />
+   <route destination="127.0.0.0" mask="255.0.0.0" nexthop="0.0.0.0" />
+   <route destination="127.0.0.1" mask="255.255.255.255" nexthop="0.0.0.0" />
+   <route destination="127.255.255.255" mask="255.255.255.255" nexthop="0.0.0.0" />
+   <route destination="192.168.0.0" mask="255.255.255.0" nexthop="0.0.0.0" />
+   <route destination="192.168.0.0" mask="255.255.255.0" nexthop="0.0.0.0" />
+   <route destination="192.168.0.2" mask="255.255.255.255" nexthop="0.0.0.0" />
+   <route destination="192.168.0.45" mask="255.255.255.255" nexthop="0.0.0.0" />
+   <route destination="192.168.0.255" mask="255.255.255.255" nexthop="0.0.0.0" />
+   <route destination="192.168.0.255" mask="255.255.255.255" nexthop="0.0.0.0" />
+   <route destination="224.0.0.0" mask="240.0.0.0" nexthop="0.0.0.0" />
+   <route destination="224.0.0.0" mask="240.0.0.0" nexthop="0.0.0.0" />
+   <route destination="224.0.0.0" mask="240.0.0.0" nexthop="0.0.0.0" />
+   <route destination="255.255.255.255" mask="255.255.255.255" nexthop="0.0.0.0" />
+   <route destination="255.255.255.255" mask="255.255.255.255" nexthop="0.0.0.0" />
+   <route destination="255.255.255.255" mask="255.255.255.255" nexthop="0.0.0.0" />
+  </ip4routes>
+ </network>
+ <eventlogfiles>
+  <eventlogfile name="Application" file="C:\Windows\System32\Winevt\Logs\Application.evtx" maximumsize="20" overwritepolicy="WhenNeeded" />
+  <eventlogfile name="HardwareEvents" file="C:\Windows\System32\Winevt\Logs\HardwareEvents.evtx" maximumsize="20" overwritepolicy="WhenNeeded" />
+  <eventlogfile name="Internet Explorer" file="C:\Windows\System32\Winevt\Logs\Internet Explorer.evtx" maximumsize="1.00390625" overwritepolicy="WhenNeeded" />
+  <eventlogfile name="Key Management Service" file="C:\Windows\System32\Winevt\Logs\Key Management Service.evtx" maximumsize="20" overwritepolicy="WhenNeeded" />
+  <eventlogfile name="Media Center" file="C:\Windows\System32\Winevt\Logs\Media Center.evtx" maximumsize="8" overwritepolicy="WhenNeeded" />
+  <eventlogfile name="OAlerts" file="C:\Windows\System32\Winevt\Logs\OAlerts.evtx" maximumsize="1.00390625" overwritepolicy="WhenNeeded" />
+  <eventlogfile name="Security" file="C:\Windows\System32\Winevt\Logs\Security.evtx" maximumsize="20" overwritepolicy="WhenNeeded" />
+  <eventlogfile name="System" file="C:\Windows\System32\Winevt\Logs\System.evtx" maximumsize="20" overwritepolicy="WhenNeeded" />
+  <eventlogfile name="Windows PowerShell" file="C:\Windows\System32\Winevt\Logs\Windows PowerShell.evtx" maximumsize="15" overwritepolicy="WhenNeeded" />
+ </eventlogfiles>
+ <localgroups>
+  <group name="Administrators">
+   <member name="DEVWORKSTATION\Administrator" />
+   <member name="DEVWORKSTATION\chris" />
+   <member name="DEVWORKSTATION\cyg_server" />
+  </group>
+  <group name="Backup Operators">
+  </group>
+  <group name="Cryptographic Operators">
+  </group>
+  <group name="Distributed COM Users">
+  </group>
+  <group name="Event Log Readers">
+  </group>
+  <group name="Guests">
+   <member name="DEVWORKSTATION\Guest" />
+  </group>
+  <group name="HelpLibraryUpdaters">
+  </group>
+  <group name="HomeUsers">
+   <member name="DEVWORKSTATION\Administrator" />
+   <member name="DEVWORKSTATION\HomeGroupUser$" />
+   <member name="DEVWORKSTATION\chris" />
+  </group>
+  <group name="IIS_IUSRS">
+   <member name="DEVWORKSTATION\IUSR" />
+  </group>
+  <group name="Network Configuration Operators">
+  </group>
+  <group name="Performance Log Users">
+  </group>
+  <group name="Performance Monitor Users">
+  </group>
+  <group name="Power Users">
+  </group>
+  <group name="Remote Desktop Users">
+  </group>
+  <group name="Replicator">
+  </group>
+  <group name="SQLServer2005SQLBrowserUser$HTPC-LIVINGROOM">
+   <member name="NT SERVICE\SQLBrowser" />
+  </group>
+  <group name="SQLServerMSSQLServerADHelperUser$HTPC-LIVINGROOM">
+   <member name="DEVWORKSTATION\NETWORK SERVICE" />
+   <member name="DEVWORKSTATION\SYSTEM" />
+  </group>
+  <group name="SQLServerMSSQLUser$DevWorkstation$MSSQLSERVER">
+   <member name="NT SERVICE\MSSQLSERVER" />
+  </group>
+  <group name="SQLServerSQLAgentUser$DEVWORKSTATION$MSSQLSERVER">
+   <member name="NT SERVICE\SQLSERVERAGENT" />
+  </group>
+  <group name="SQLServerSQLAgentUser$HTPC-LIVINGROOM$SQLEXPRESS">
+  </group>
+  <group name="Users">
+   <member name="DEVWORKSTATION\INTERACTIVE" />
+   <member name="DEVWORKSTATION\Authenticated Users" />
+   <member name="DEVWORKSTATION\sshd" />
+   <member name="DEVWORKSTATION\cyg_server" />
+  </group>
+ </localgroups>
+ <localusers>
+  <user name="Administrator" description="Built-in account for administering the computer/domain" />
+  <user name="chris" description="" />
+  <user name="cyg_server" description="" />
+  <user name="Guest" description="Built-in account for guest access to the computer/domain" />
+  <user name="HomeGroupUser$" description="Built-in account for homegroup access to the computer" />
+  <user name="sshd" description="" />
+ </localusers>
+ <printspooler location="C:\Windows\system32\spool\PRINTERS" />
+ <printers>
+  <printer name="Fax" drivername="Microsoft Shared Fax Driver" portname="SHRFAX:" />
+  <printer name="Microsoft XPS Document Writer" drivername="Microsoft XPS Document Writer" portname="XPSPort:" />
+ </printers>
+ <regional timezone="(UTC-05:00) Eastern Time (US &#38; Canada)" />
+ <processes>
+  <process caption="audiodg.exe" executablepath="C:\Windows\system32\AUDIODG.EXE" />
+  <process caption="chrome.exe" executablepath="C:\Users\chris\AppData\Local\Google\Chrome\Application\chrome.exe" />
+  <process caption="chrome.exe" executablepath="C:\Users\chris\AppData\Local\Google\Chrome\Application\chrome.exe" />
+  <process caption="chrome.exe" executablepath="C:\Users\chris\AppData\Local\Google\Chrome\Application\chrome.exe" />
+  <process caption="chrome.exe" executablepath="C:\Users\chris\AppData\Local\Google\Chrome\Application\chrome.exe" />
+  <process caption="chrome.exe" executablepath="C:\Users\chris\AppData\Local\Google\Chrome\Application\chrome.exe" />
+  <process caption="chrome.exe" executablepath="C:\Users\chris\AppData\Local\Google\Chrome\Application\chrome.exe" />
+  <process caption="chrome.exe" executablepath="C:\Users\chris\AppData\Local\Google\Chrome\Application\chrome.exe" />
+  <process caption="chrome.exe" executablepath="C:\Users\chris\AppData\Local\Google\Chrome\Application\chrome.exe" />
+  <process caption="chrome.exe" executablepath="C:\Users\chris\AppData\Local\Google\Chrome\Application\chrome.exe" />
+  <process caption="chrome.exe" executablepath="C:\Users\chris\AppData\Local\Google\Chrome\Application\chrome.exe" />
+  <process caption="chrome.exe" executablepath="C:\Users\chris\AppData\Local\Google\Chrome\Application\chrome.exe" />
+  <process caption="chrome.exe" executablepath="C:\Users\chris\AppData\Local\Google\Chrome\Application\chrome.exe" />
+  <process caption="chrome.exe" executablepath="C:\Users\chris\AppData\Local\Google\Chrome\Application\chrome.exe" />
+  <process caption="chrome.exe" executablepath="C:\Users\chris\AppData\Local\Google\Chrome\Application\chrome.exe" />
+  <process caption="chrome.exe" executablepath="C:\Users\chris\AppData\Local\Google\Chrome\Application\chrome.exe" />
+  <process caption="chrome.exe" executablepath="C:\Users\chris\AppData\Local\Google\Chrome\Application\chrome.exe" />
+  <process caption="chrome.exe" executablepath="C:\Users\chris\AppData\Local\Google\Chrome\Application\chrome.exe" />
+  <process caption="chrome.exe" executablepath="C:\Users\chris\AppData\Local\Google\Chrome\Application\chrome.exe" />
+  <process caption="chrome.exe" executablepath="C:\Users\chris\AppData\Local\Google\Chrome\Application\chrome.exe" />
+  <process caption="chrome.exe" executablepath="C:\Users\chris\AppData\Local\Google\Chrome\Application\chrome.exe" />
+  <process caption="cmd.exe" executablepath="C:\Windows\system32\cmd.exe" />
+  <process caption="conhost.exe" executablepath="C:\Windows\system32\conhost.exe" />
+  <process caption="conhost.exe" executablepath="C:\Windows\system32\conhost.exe" />
+  <process caption="cscript.exe" executablepath="C:\Windows\system32\cscript.exe" />
+  <process caption="csrss.exe" executablepath="C:\Windows\system32\csrss.exe" />
+  <process caption="csrss.exe" executablepath="C:\Windows\system32\csrss.exe" />
+  <process caption="csrss.exe" executablepath="C:\Windows\system32\csrss.exe" />
+  <process caption="cygrunsrv.exe" executablepath="C:\cygwin\bin\cygrunsrv.exe" />
+  <process caption="devenv.exe" executablepath="C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\devenv.exe" />
+  <process caption="dsNcService.exe" executablepath="C:\Program Files (x86)\Juniper Networks\Common Files\dsNcService.exe" />
+  <process caption="dwm.exe" executablepath="C:\Windows\system32\Dwm.exe" />
+  <process caption="EXCEL.EXE" executablepath="C:\Program Files (x86)\Microsoft Office\Office14\EXCEL.EXE" />
+  <process caption="explorer.exe" executablepath="C:\Windows\Explorer.EXE" />
+  <process caption="explorer.exe" executablepath="C:\Windows\explorer.exe" />
+  <process caption="GitHub.exe" executablepath="C:\Users\chris\AppData\Local\Apps\2.0\AJA98K96.L5K\DCN5GTZB.NL9\gith..tion_8f45a2159c87c850_0001.0000_5e92865b2e0276c0\GitHub.exe" />
+  <process caption="jusched.exe" executablepath="C:\Program Files (x86)\Common Files\Java\Java Update\jusched.exe" />
+  <process caption="LogonUI.exe" executablepath="C:\Windows\system32\LogonUI.exe" />
+  <process caption="lsass.exe" executablepath="C:\Windows\system32\lsass.exe" />
+  <process caption="lsm.exe" executablepath="C:\Windows\system32\lsm.exe" />
+  <process caption="notepad++.exe" executablepath="C:\Program Files (x86)\Notepad++\notepad++.exe" />
+  <process caption="OSPPSVC.EXE" executablepath="C:\Program Files\Common Files\Microsoft Shared\OfficeSoftwareProtectionPlatform\OSPPSVC.EXE" />
+  <process caption="rdpclip.exe" executablepath="C:\Windows\System32\rdpclip.exe" />
+  <process caption="SearchIndexer.exe" executablepath="C:\Windows\system32\SearchIndexer.exe" />
+  <process caption="services.exe" executablepath="C:\Windows\system32\services.exe" />
+  <process caption="smss.exe" executablepath="" />
+  <process caption="splwow64.exe" executablepath="C:\Windows\splwow64.exe" />
+  <process caption="spoolsv.exe" executablepath="C:\Windows\System32\spoolsv.exe" />
+  <process caption="sppsvc.exe" executablepath="C:\Windows\system32\sppsvc.exe" />
+  <process caption="sqlservr.exe" executablepath="c:\Program Files\Microsoft SQL Server\MSSQL10_50.MSSQLSERVER\MSSQL\Binn\sqlservr.exe" />
+  <process caption="sqlwriter.exe" executablepath="c:\Program Files\Microsoft SQL Server\90\Shared\sqlwriter.exe" />
+  <process caption="ssh-agent.exe" executablepath="C:\Users\chris\AppData\Local\GitHub\PortableGit_8810fd5c2c79c73adcc73fd0825f3b32fdb816e7\bin\ssh-agent.exe" />
+  <process caption="sshd.exe" executablepath="C:\cygwin\usr\sbin\sshd.exe" />
+  <process caption="svchost.exe" executablepath="C:\Windows\system32\svchost.exe" />
+  <process caption="svchost.exe" executablepath="C:\Windows\system32\svchost.exe" />
+  <process caption="svchost.exe" executablepath="C:\Windows\System32\svchost.exe" />
+  <process caption="svchost.exe" executablepath="C:\Windows\System32\svchost.exe" />
+  <process caption="svchost.exe" executablepath="C:\Windows\system32\svchost.exe" />
+  <process caption="svchost.exe" executablepath="C:\Windows\system32\svchost.exe" />
+  <process caption="svchost.exe" executablepath="C:\Windows\system32\svchost.exe" />
+  <process caption="svchost.exe" executablepath="C:\Windows\system32\svchost.exe" />
+  <process caption="svchost.exe" executablepath="C:\Windows\system32\svchost.exe" />
+  <process caption="svchost.exe" executablepath="C:\Windows\System32\svchost.exe" />
+  <process caption="svchost.exe" executablepath="C:\Windows\system32\svchost.exe" />
+  <process caption="svchost.exe" executablepath="C:\Windows\system32\svchost.exe" />
+  <process caption="svchost.exe" executablepath="C:\Windows\System32\svchost.exe" />
+  <process caption="svchost.exe" executablepath="C:\Windows\System32\svchost.exe" />
+  <process caption="System" executablepath="" />
+  <process caption="System Idle Process" executablepath="" />
+  <process caption="taskhost.exe" executablepath="C:\Windows\system32\taskhost.exe" />
+  <process caption="wininit.exe" executablepath="C:\Windows\system32\wininit.exe" />
+  <process caption="winlogon.exe" executablepath="C:\Windows\system32\winlogon.exe" />
+  <process caption="winlogon.exe" executablepath="C:\Windows\system32\winlogon.exe" />
+  <process caption="winvnc.exe" executablepath="C:\Program Files\UltraVNC\WinVNC.exe" />
+  <process caption="winvnc.exe" executablepath="C:\Program Files\UltraVNC\WinVNC.exe" />
+  <process caption="WINWORD.EXE" executablepath="C:\Program Files (x86)\Microsoft Office\Office14\WINWORD.EXE" />
+  <process caption="WINWORD.EXE" executablepath="C:\Program Files (x86)\Microsoft Office\Office14\WINWORD.EXE" />
+  <process caption="WINZIP32.EXE" executablepath="C:\Program Files (x86)\WinZip\WINZIP32.EXE" />
+  <process caption="WmiPrvSE.exe" executablepath="C:\Windows\system32\wbem\wmiprvse.exe" />
+  <process caption="wmpnetwk.exe" executablepath="C:\Program Files\Windows Media Player\wmpnetwk.exe" />
+ </processes>
+ <services>
+  <service name="ActiveX Installer (AxInstSV)" startmode="Manual" started="False" startname="LocalSystem" />
+  <service name="Adaptive Brightness" startmode="Manual" started="False" startname="NT AUTHORITY\LocalService" />
+  <service name="Application Experience" startmode="Manual" started="False" startname="localSystem" />
+  <service name="Application Identity" startmode="Manual" started="False" startname="NT Authority\LocalService" />
+  <service name="Application Information" startmode="Manual" started="False" startname="LocalSystem" />
+  <service name="Application Layer Gateway Service" startmode="Manual" started="False" startname="NT AUTHORITY\LocalService" />
+  <service name="Application Management" startmode="Manual" started="True" startname="LocalSystem" />
+  <service name="ASP.NET State Service" startmode="Manual" started="False" startname="NT AUTHORITY\NetworkService" />
+  <service name="Background Intelligent Transfer Service" startmode="Manual" started="True" startname="LocalSystem" />
+  <service name="Base Filtering Engine" startmode="Auto" started="True" startname="NT AUTHORITY\LocalService" />
+  <service name="BitLocker Drive Encryption Service" startmode="Manual" started="False" startname="localSystem" />
+  <service name="Block Level Backup Engine Service" startmode="Manual" started="False" startname="localSystem" />
+  <service name="Bluetooth Support Service" startmode="Manual" started="True" startname="NT AUTHORITY\LocalService" />
+  <service name="BranchCache" startmode="Manual" started="False" startname="NT AUTHORITY\NetworkService" />
+  <service name="Certificate Propagation" startmode="Auto" started="True" startname="LocalSystem" />
+  <service name="CNG Key Isolation" startmode="Manual" started="True" startname="LocalSystem" />
+  <service name="COM+ Event System" startmode="Auto" started="True" startname="NT AUTHORITY\LocalService" />
+  <service name="COM+ System Application" startmode="Manual" started="False" startname="LocalSystem" />
+  <service name="Computer Browser" startmode="Manual" started="True" startname="LocalSystem" />
+  <service name="Credential Manager" startmode="Manual" started="False" startname="LocalSystem" />
+  <service name="Cryptographic Services" startmode="Auto" started="True" startname="NT Authority\NetworkService" />
+  <service name="CYGWIN sshd" startmode="Auto" started="True" startname=".\cyg_server" />
+  <service name="DCOM Server Process Launcher" startmode="Auto" started="True" startname="LocalSystem" />
+  <service name="Desktop Window Manager Session Manager" startmode="Auto" started="True" startname="localSystem" />
+  <service name="DHCP Client" startmode="Auto" started="True" startname="NT Authority\LocalService" />
+  <service name="Diagnostic Policy Service" startmode="Auto" started="True" startname="NT AUTHORITY\LocalService" />
+  <service name="Diagnostic Service Host" startmode="Manual" started="True" startname="NT AUTHORITY\LocalService" />
+  <service name="Diagnostic System Host" startmode="Manual" started="False" startname="LocalSystem" />
+  <service name="Disk Defragmenter" startmode="Manual" started="False" startname="localSystem" />
+  <service name="Distributed Link Tracking Client" startmode="Auto" started="True" startname="LocalSystem" />
+  <service name="Distributed Transaction Coordinator" startmode="Manual" started="False" startname="NT AUTHORITY\NetworkService" />
+  <service name="DNS Client" startmode="Auto" started="True" startname="NT AUTHORITY\NetworkService" />
+  <service name="Encrypting File System (EFS)" startmode="Manual" started="False" startname="LocalSystem" />
+  <service name="Extensible Authentication Protocol" startmode="Manual" started="True" startname="localSystem" />
+  <service name="Fax" startmode="Manual" started="False" startname="NT AUTHORITY\NetworkService" />
+  <service name="Function Discovery Provider Host" startmode="Manual" started="True" startname="NT AUTHORITY\LocalService" />
+  <service name="Function Discovery Resource Publication" startmode="Auto" started="True" startname="NT AUTHORITY\LocalService" />
+  <service name="Group Policy Client" startmode="Auto" started="True" startname="LocalSystem" />
+  <service name="Health Key and Certificate Management" startmode="Manual" started="False" startname="localSystem" />
+  <service name="HomeGroup Listener" startmode="Manual" started="True" startname="LocalSystem" />
+  <service name="HomeGroup Provider" startmode="Manual" started="True" startname="NT AUTHORITY\LocalService" />
+  <service name="Human Interface Device Access" startmode="Manual" started="False" startname="LocalSystem" />
+  <service name="IKE and AuthIP IPsec Keying Modules" startmode="Auto" started="True" startname="LocalSystem" />
+  <service name="Interactive Services Detection" startmode="Manual" started="False" startname="LocalSystem" />
+  <service name="Internet Connection Sharing (ICS)" startmode="Disabled" started="False" startname="LocalSystem" />
+  <service name="IP Helper" startmode="Auto" started="True" startname="LocalSystem" />
+  <service name="IPsec Policy Agent" startmode="Manual" started="True" startname="NT Authority\NetworkService" />
+  <service name="Juniper Network Connect Service" startmode="Auto" started="True" startname="LocalSystem" />
+  <service name="KtmRm for Distributed Transaction Coordinator" startmode="Manual" started="False" startname="NT AUTHORITY\NetworkService" />
+  <service name="Link-Layer Topology Discovery Mapper" startmode="Manual" started="False" startname="NT AUTHORITY\LocalService" />
+  <service name="Media Center Extender Service" startmode="Disabled" started="False" startname="NT Authority\LocalService" />
+  <service name="Microsoft .NET Framework NGEN v2.0.50727_X64" startmode="Disabled" started="False" startname="LocalSystem" />
+  <service name="Microsoft .NET Framework NGEN v2.0.50727_X86" startmode="Disabled" started="False" startname="LocalSystem" />
+  <service name="Microsoft .NET Framework NGEN v4.0.30319_X64" startmode="Auto" started="False" startname="LocalSystem" />
+  <service name="Microsoft .NET Framework NGEN v4.0.30319_X86" startmode="Auto" started="False" startname="LocalSystem" />
+  <service name="Microsoft iSCSI Initiator Service" startmode="Manual" started="False" startname="LocalSystem" />
+  <service name="Microsoft SharePoint Workspace Audit Service" startmode="Manual" started="False" startname="NT AUTHORITY\LocalService" />
+  <service name="Microsoft Software Shadow Copy Provider" startmode="Manual" started="False" startname="LocalSystem" />
+  <service name="Multimedia Class Scheduler" startmode="Auto" started="True" startname="LocalSystem" />
+  <service name="Net.Msmq Listener Adapter" startmode="Disabled" started="False" startname="NT AUTHORITY\NetworkService" />
+  <service name="Net.Pipe Listener Adapter" startmode="Disabled" started="False" startname="NT AUTHORITY\LocalService" />
+  <service name="Net.Tcp Listener Adapter" startmode="Disabled" started="False" startname="NT AUTHORITY\LocalService" />
+  <service name="Net.Tcp Port Sharing Service" startmode="Disabled" started="False" startname="NT AUTHORITY\LocalService" />
+  <service name="Netlogon" startmode="Manual" started="False" startname="LocalSystem" />
+  <service name="Network Access Protection Agent" startmode="Manual" started="False" startname="NT AUTHORITY\NetworkService" />
+  <service name="Network Connections" startmode="Manual" started="True" startname="LocalSystem" />
+  <service name="Network List Service" startmode="Manual" started="True" startname="NT AUTHORITY\LocalService" />
+  <service name="Network Location Awareness" startmode="Auto" started="True" startname="NT AUTHORITY\NetworkService" />
+  <service name="Network Store Interface Service" startmode="Auto" started="True" startname="NT Authority\LocalService" />
+  <service name="Office  Source Engine" startmode="Manual" started="False" startname="LocalSystem" />
+  <service name="Office Software Protection Platform" startmode="Manual" started="True" startname="NT AUTHORITY\NetworkService" />
+  <service name="Offline Files" startmode="Auto" started="True" startname="LocalSystem" />
+  <service name="Parental Controls" startmode="Manual" started="False" startname="NT Authority\LocalService" />
+  <service name="Peer Name Resolution Protocol" startmode="Manual" started="True" startname="NT AUTHORITY\LocalService" />
+  <service name="Peer Networking Grouping" startmode="Manual" started="True" startname="NT AUTHORITY\LocalService" />
+  <service name="Peer Networking Identity Manager" startmode="Manual" started="True" startname="NT AUTHORITY\LocalService" />
+  <service name="Performance Counter DLL Host" startmode="Manual" started="False" startname="NT AUTHORITY\LocalService" />
+  <service name="Performance Logs &#38; Alerts" startmode="Manual" started="False" startname="NT AUTHORITY\LocalService" />
+  <service name="Plug and Play" startmode="Auto" started="True" startname="LocalSystem" />
+  <service name="PnP-X IP Bus Enumerator" startmode="Manual" started="False" startname="LocalSystem" />
+  <service name="PNRP Machine Name Publication Service" startmode="Manual" started="False" startname="NT AUTHORITY\LocalService" />
+  <service name="Portable Device Enumerator Service" startmode="Manual" started="False" startname="LocalSystem" />
+  <service name="Power" startmode="Auto" started="True" startname="LocalSystem" />
+  <service name="Print Spooler" startmode="Auto" started="True" startname="LocalSystem" />
+  <service name="Problem Reports and Solutions Control Panel Support" startmode="Manual" started="False" startname="localSystem" />
+  <service name="Program Compatibility Assistant Service" startmode="Auto" started="True" startname="LocalSystem" />
+  <service name="Protected Storage" startmode="Manual" started="False" startname="LocalSystem" />
+  <service name="Quality Windows Audio Video Experience" startmode="Manual" started="False" startname="NT AUTHORITY\LocalService" />
+  <service name="Remote Access Auto Connection Manager" startmode="Manual" started="False" startname="localSystem" />
+  <service name="Remote Access Connection Manager" startmode="Manual" started="False" startname="localSystem" />
+  <service name="Remote Desktop Configuration" startmode="Manual" started="True" startname="localSystem" />
+  <service name="Remote Desktop Services" startmode="Manual" started="True" startname="NT Authority\NetworkService" />
+  <service name="Remote Desktop Services UserMode Port Redirector" startmode="Manual" started="True" startname="localSystem" />
+  <service name="Remote Procedure Call (RPC)" startmode="Auto" started="True" startname="NT AUTHORITY\NetworkService" />
+  <service name="Remote Procedure Call (RPC) Locator" startmode="Manual" started="False" startname="NT AUTHORITY\NetworkService" />
+  <service name="Remote Registry" startmode="Manual" started="False" startname="NT AUTHORITY\LocalService" />
+  <service name="Routing and Remote Access" startmode="Disabled" started="False" startname="localSystem" />
+  <service name="RPC Endpoint Mapper" startmode="Auto" started="True" startname="NT AUTHORITY\NetworkService" />
+  <service name="Secondary Logon" startmode="Manual" started="False" startname="LocalSystem" />
+  <service name="Secure Socket Tunneling Protocol Service" startmode="Manual" started="False" startname="NT Authority\LocalService" />
+  <service name="Security Accounts Manager" startmode="Auto" started="True" startname="LocalSystem" />
+  <service name="Security Center" startmode="Auto" started="True" startname="NT AUTHORITY\LocalService" />
+  <service name="Server" startmode="Auto" started="True" startname="LocalSystem" />
+  <service name="Shell Hardware Detection" startmode="Auto" started="True" startname="LocalSystem" />
+  <service name="Smart Card" startmode="Auto" started="True" startname="NT AUTHORITY\LocalService" />
+  <service name="Smart Card Removal Policy" startmode="Manual" started="False" startname="LocalSystem" />
+  <service name="SNMP Trap" startmode="Manual" started="False" startname="NT AUTHORITY\LocalService" />
+  <service name="Software Protection" startmode="Manual" started="True" startname="NT AUTHORITY\NetworkService" />
+  <service name="SPP Notification Service" startmode="Manual" started="True" startname="NT AUTHORITY\LocalService" />
+  <service name="SQL Active Directory Helper Service" startmode="Disabled" started="False" startname="NT AUTHORITY\NETWORKSERVICE" />
+  <service name="SQL Server (MSSQLSERVER)" startmode="Auto" started="True" startname="NT AUTHORITY\NETWORK SERVICE" />
+  <service name="SQL Server Agent (MSSQLSERVER)" startmode="Disabled" started="False" startname="NT AUTHORITY\NETWORK SERVICE" />
+  <service name="SQL Server Browser" startmode="Disabled" started="False" startname="NT AUTHORITY\LOCAL SERVICE" />
+  <service name="SQL Server VSS Writer" startmode="Auto" started="True" startname="LocalSystem" />
+  <service name="SSDP Discovery" startmode="Manual" started="True" startname="NT AUTHORITY\LocalService" />
+  <service name="Superfetch" startmode="Auto" started="True" startname="LocalSystem" />
+  <service name="System Event Notification Service" startmode="Auto" started="True" startname="LocalSystem" />
+  <service name="Tablet PC Input Service" startmode="Manual" started="False" startname="LocalSystem" />
+  <service name="Task Scheduler" startmode="Auto" started="True" startname="LocalSystem" />
+  <service name="TCP/IP NetBIOS Helper" startmode="Auto" started="True" startname="NT AUTHORITY\LocalService" />
+  <service name="Telephony" startmode="Manual" started="False" startname="NT AUTHORITY\NetworkService" />
+  <service name="Themes" startmode="Auto" started="True" startname="LocalSystem" />
+  <service name="Thread Ordering Server" startmode="Manual" started="False" startname="NT AUTHORITY\LocalService" />
+  <service name="TPM Base Services" startmode="Manual" started="False" startname="NT AUTHORITY\LocalService" />
+  <service name="UPnP Device Host" startmode="Manual" started="True" startname="NT AUTHORITY\LocalService" />
+  <service name="User Profile Service" startmode="Auto" started="True" startname="LocalSystem" />
+  <service name="uvnc_service" startmode="Auto" started="True" startname="LocalSystem" />
+  <service name="Virtual Disk" startmode="Manual" started="False" startname="LocalSystem" />
+  <service name="Volume Shadow Copy" startmode="Manual" started="False" startname="LocalSystem" />
+  <service name="WebClient" startmode="Manual" started="False" startname="NT AUTHORITY\LocalService" />
+  <service name="Windows Activation Technologies Service" startmode="Manual" started="False" startname="LocalSystem" />
+  <service name="Windows Audio" startmode="Auto" started="True" startname="NT AUTHORITY\LocalService" />
+  <service name="Windows Audio Endpoint Builder" startmode="Auto" started="True" startname="LocalSystem" />
+  <service name="Windows Backup" startmode="Manual" started="False" startname="localSystem" />
+  <service name="Windows Biometric Service" startmode="Manual" started="False" startname="LocalSystem" />
+  <service name="Windows CardSpace" startmode="Manual" started="False" startname="LocalSystem" />
+  <service name="Windows Color System" startmode="Manual" started="False" startname="NT AUTHORITY\LocalService" />
+  <service name="Windows Connect Now - Config Registrar" startmode="Manual" started="False" startname="NT AUTHORITY\LocalService" />
+  <service name="Windows Defender" startmode="Auto" started="True" startname="LocalSystem" />
+  <service name="Windows Driver Foundation - User-mode Driver Framework" startmode="Auto" started="True" startname="LocalSystem" />
+  <service name="Windows Error Reporting Service" startmode="Manual" started="False" startname="localSystem" />
+  <service name="Windows Event Collector" startmode="Manual" started="False" startname="NT AUTHORITY\NetworkService" />
+  <service name="Windows Event Log" startmode="Auto" started="True" startname="NT AUTHORITY\LocalService" />
+  <service name="Windows Firewall" startmode="Auto" started="True" startname="NT Authority\LocalService" />
+  <service name="Windows Font Cache Service" startmode="Auto" started="True" startname="NT AUTHORITY\LocalService" />
+  <service name="Windows Image Acquisition (WIA)" startmode="Manual" started="False" startname="NT Authority\LocalService" />
+  <service name="Windows Installer" startmode="Manual" started="True" startname="LocalSystem" />
+  <service name="Windows Management Instrumentation" startmode="Auto" started="True" startname="localSystem" />
+  <service name="Windows Media Center Receiver Service" startmode="Manual" started="False" startname="NT AUTHORITY\networkService" />
+  <service name="Windows Media Center Scheduler Service" startmode="Manual" started="False" startname="NT AUTHORITY\networkService" />
+  <service name="Windows Media Player Network Sharing Service" startmode="Auto" started="True" startname="NT AUTHORITY\NetworkService" />
+  <service name="Windows Modules Installer" startmode="Manual" started="False" startname="localSystem" />
+  <service name="Windows Presentation Foundation Font Cache 3.0.0.0" startmode="Manual" started="False" startname="NT Authority\LocalService" />
+  <service name="Windows Remote Management (WS-Management)" startmode="Manual" started="False" startname="NT AUTHORITY\NetworkService" />
+  <service name="Windows Search" startmode="Auto" started="True" startname="LocalSystem" />
+  <service name="Windows Time" startmode="Manual" started="True" startname="NT AUTHORITY\LocalService" />
+  <service name="Windows Update" startmode="Auto" started="True" startname="LocalSystem" />
+  <service name="WinHTTP Web Proxy Auto-Discovery Service" startmode="Manual" started="True" startname="NT AUTHORITY\LocalService" />
+  <service name="Wired AutoConfig" startmode="Manual" started="False" startname="localSystem" />
+  <service name="WLAN AutoConfig" startmode="Auto" started="True" startname="LocalSystem" />
+  <service name="WMI Performance Adapter" startmode="Manual" started="False" startname="localSystem" />
+  <service name="Workstation" startmode="Auto" started="True" startname="NT AUTHORITY\NetworkService" />
+  <service name="WWAN AutoConfig" startmode="Manual" started="False" startname="NT Authority\LocalService" />
+ </services>
+ <shares>
+  <share name="ADMIN$" path="C:\Windows" description="Remote Admin" />
+  <share name="C$" path="C:\" description="Default share" />
+  <share name="download" path="C:\download" description="" />
+  <share name="E$" path="E:\" description="Default share" />
+  <share name="IPC$" path="" description="Remote IPC" />
+  <share name="Users" path="C:\Users" description="" />
+ </shares>
+ <win32_startupcommand>
+  <command user="DEVWORKSTATION\chris" name="Google Update" command="&quot;C:\Users\chris\AppData\Local\Google\Update\GoogleUpdate.exe&quot; /c" />
+  <command user="DEVWORKSTATION\chris" name="SpiderOak" command="C:\Program Files (x86)\SpiderOak\SpiderOak.exe --windows_startup" />
+  <command user="DEVWORKSTATION\cyg_server" name="Sidebar" command="%ProgramFiles%\Windows Sidebar\Sidebar.exe /autoRun" />
+  <command user="NT AUTHORITY\LOCAL SERVICE" name="Sidebar" command="%ProgramFiles%\Windows Sidebar\Sidebar.exe /autoRun" />
+  <command user="NT AUTHORITY\NETWORK SERVICE" name="Sidebar" command="%ProgramFiles%\Windows Sidebar\Sidebar.exe /autoRun" />
+  <command user="Public" name="HotKeysCmds" command="C:\Windows\system32\hkcmd.exe" />
+  <command user="Public" name="IgfxTray" command="C:\Windows\system32\igfxtray.exe" />
+  <command user="Public" name="Persistence" command="C:\Windows\system32\igfxpers.exe" />
+ </win32_startupcommand>
+ <pagefiles>
+ </pagefiles>
+ <registry currentsize="130" maximumsize="2048" />
+</computer>
