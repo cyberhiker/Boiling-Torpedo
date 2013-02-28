@@ -1,3 +1,28 @@
+=====================================================================
+			  Boiling-Torpedo
+				v0.5
+			    2012-02-28
+=====================================================================
+
+I needed a script that I could put on any Windows machine that will
+give me all the information about a machine that I could handle.
+
+I have a collection of scripts of dubious usefulness and incomplete 
+results that I stopped using.  After running across the SYDI scripts,
+I thought I would add some of the security settings from my scripts
+to SYDI.  I also removed some features that I don't need.  This is 
+the result of that effort.
+
+I have retained all the SYDI licensing and readme with some 
+corrections for changes I have made.  Please let me know if you find 
+issues or wish to suggest changes.
+
+The eventual hope is to be able to upload these results to a tool
+to show all compliance issues across a given environment.
+
+Feel free to contact me at:  cburton [at] redeyetek [dot] com
+
+
 *********************************************************************
                      SYDI-Server 2.3 Readme File                    
                              2009-01-24
