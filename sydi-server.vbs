@@ -231,6 +231,7 @@ Dim strStylesheet, strXSLFreeText
 
 ' Constants
 Const adVarChar = 200
+Const adDate = 7
 Const MaxCharacters = 255
 
 '==========================================================
@@ -1248,20 +1249,77 @@ Function GatherWMIInformation()
 	End If
 
 	If (bWMILocalAccounts) Then
+		On Error GoTo 0
+
 		ReportProgress " Gathering local users"
-		Set colItems = objWMIService.ExecQuery("Select Description, Name from Win32_UserAccount Where Domain='" & strComputerSystem_Name & "'",,48)
+		Set colItems = objWMIService.ExecQuery("Select Description, Disabled, " & _
+			"Lockout, Name, PasswordChangeable, PasswordExpires, PasswordRequired " &_ 
+			"FROM Win32_UserAccount Where Domain='" & strComputerSystem_Name & "'",,48)
+				
 		Set objDbrLocalAccounts = CreateObject("ADOR.Recordset")
 		objDbrLocalAccounts.Fields.Append "Description", adVarChar, MaxCharacters
+		objDbrLocalAccounts.Fields.Append "Disabled", adVarChar, MaxCharacters
+		objDbrLocalAccounts.Fields.Append "Lockout", adVarChar, MaxCharacters
 		objDbrLocalAccounts.Fields.Append "UserName", adVarChar, MaxCharacters
+		objDbrLocalAccounts.Fields.Append "PasswordChangeable", adVarChar, MaxCharacters
+		objDbrLocalAccounts.Fields.Append "PasswordExpires", adVarChar, MaxCharacters
+		objDbrLocalAccounts.Fields.Append "PasswordRequired", adVarChar, MaxCharacters
+		objDbrLocalAccounts.Fields.Append "PasswordLastChanged", adDate
+		objDbrLocalAccounts.Fields.Append "PasswordAge", adDate
+		objDbrLocalAccounts.Fields.Append "BadPasswordAttempts", adVarChar, MaxCharacters
+		objDbrLocalAccounts.Fields.Append "PasswordStale", adVarChar, MaxCharacters
+		objDbrLocalAccounts.Fields.Append "MemberOf", adVarChar, MaxCharacters
+		
 		objDbrLocalAccounts.Open
+		
 		For Each objItem in colItems
-			objDbrLocalAccounts.AddNew
-			objDbrLocalAccounts("Description") = objItem.Description
-			objDbrLocalAccounts("Description") = objItem.Description
-			objDbrLocalAccounts("Description") = objItem.Description
+			Dim strThisUser, strConnectString, strGroups
+			Dim intMaxPassAge, intCurPassAge, intBadPass, intLastChanged
+			Dim dtLastChanged
+			Dim colGroups, objGroup
+			strThisUser = objItem.Name
 			
+			'Create a new record in the recordset
+			objDbrLocalAccounts.AddNew
+			
+			'Add Current Info to the recordset
 			objDbrLocalAccounts("Description") = objItem.Description
-			objDbrLocalAccounts("UserName") = objItem.Name
+			objDbrLocalAccounts("Disabled") = objItem.Disabled
+			objDbrLocalAccounts("Lockout") = objItem.Lockout
+			objDbrLocalAccounts("UserName") = strThisUser
+			objDbrLocalAccounts("PasswordChangeable") = objItem.PasswordChangeable
+			objDbrLocalAccounts("PasswordExpires") = objItem.PasswordExpires
+			objDbrLocalAccounts("PasswordRequired") = objItem.PasswordRequired
+			
+			strConnectString = "WinNT://" & strComputerSystem_Name & "/" & strThisUser & ",user"
+			Set objUser = GetObject(strConnectString)
+	
+			intLastChanged = objUser.Get("PasswordAge")
+			intMaxPassAge = objUser.Get("MaxPasswordAge")
+			dtLastChanged = CStr(objUser.PasswordExpirationDate - intMaxPassAge / _
+				(60 * 60 * 24))
+			
+			intCurPassAge = Round((((intLastChanged / 60) / 60) / 24), 0)
+			
+			intBadPass = objUser.Get("BadPasswordAttempts")
+			
+			If intLastChanged > intMaxPassAge Then
+				objDbrLocalAccounts("PasswordStale") = True
+			Else
+				objDbrLocalAccounts("PasswordStale") = False
+			End If
+			
+			objDbrLocalAccounts("BadPasswordAttempts") = intBadPass
+			objDbrLocalAccounts("PasswordLastChanged") = dtLastChanged
+			
+			Set colGroups = objUser.Groups
+			strGroups = ""
+			For Each objGroup in colGroups
+				strGroups = strGroups & "," & objGroup.Name	
+			Next
+			
+			objDbrLocalAccounts("MemberOf") = Right(strGroups,Len(strGroups)-1)
+			
 			objDbrLocalAccounts.Update
 		Next
 		
