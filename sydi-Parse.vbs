@@ -26,15 +26,16 @@ TableSQL = "CREATE TABLE if not exists [Targets] ('TargetID' INTEGER PRIMARY KEY
 oConn.Execute(TableSQL)
 
 TableSQL = "CREATE TABLE if not exists [Platforms] ('PlatformID' INTEGER PRIMARY KEY AUTOINCREMENT, " & _
-			"'SoftwareName' text, 'Manufacturer' text, 'Version' text)"
+			"'SoftwareName' text, 'Vendor' text, 'Version' text)"
 oConn.Execute(TableSQL)
 
 TableSQL = "CREATE TABLE if not exists [CrossReference] ('RefID' INTEGER PRIMARY KEY AUTOINCREMENT, " & _
 			"'TargetID' int, 'PlatformID' int)"
 oConn.Execute(TableSQL)
 
-ViewSQL = "CREATE VIEW if not exists [Combined] (SELECT )"
-oConn.Execute(ViewSQL)
+' Create a helpful view to display the list of all software installed on all machines.
+'ViewSQL = "CREATE VIEW if not exists [Combined] (SELECT )"
+'oConn.Execute(ViewSQL)
 
 i = 0
 For Each File In oFiles
@@ -79,15 +80,29 @@ For Each File In oFiles
 			PlatformID = 0
 			
 			SoftwareName = AppNodeList.item(i).getAttribute("productname")
+			Vendor = AppNodeList.item(i).getAttribute("vendor")
 			Version = AppNodeList.item(i).getAttribute("version")
 
 			SoftwareSQL = "SELECT PlatformID FROM [Platforms] WHERE [SoftwareName] = '" & SoftwareName & "'"
 			SoftwareSQL = SoftwareSQL & " AND [Version] = '" & Version & "'"
+			
+			If Vendor <> "" Then
+				SoftwareSQL = SoftwareSQL & " AND [Vendor] = '" & Vendor & "'"
+			End If
+			
 			Set SoftwareRS = oConn.Execute(SoftwareSQL)
 			
 			If SoftwareRS.Eof Then
-				InsertSQL = "INSERT INTO Platforms ([SoftwareName], [Version]) " & _
-					"VALUES ('" & SoftwareName & "','" & Version & "')"
+
+				If Vendor <> "" Then
+					InsertSQL = "INSERT INTO Platforms ([SoftwareName], [Version], [Vendor]) " & _
+						"VALUES ('" & SoftwareName & "','" & Version & "','" & Vendor & "')"
+				Else
+					InsertSQL = "INSERT INTO Platforms ([SoftwareName], [Version]) " & _
+						"VALUES ('" & SoftwareName & "','" & Version & "')"
+				End If	
+				
+				InsertSQL = InsertSQL 
 
 				'Do the Insert
 				Set InsertRS = oConn.Execute(InsertSQL)
