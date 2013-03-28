@@ -56,7 +56,7 @@ LogDirectory = "C:\PortLogs"
 
 ' Set to true if you want a master file that combines the results into a 
 ' single file.
-DoCombinedResults = False
+DoCombinedResults = True
 
 '*************************************************************************** 
 ' END USER VARIABLES
@@ -93,100 +93,106 @@ Set oInputFile=oFSO.OpenTextFile(CredentialFile, ForReading)
 Do While Not oInputFile.AtEndOfStream
 	
 	ThisLine = oInputFile.Readline
-	arrCred = Split(ThisLine, ",")  ' Find Credentials in the file
-	strComputer = arrCred(1)
 	
-	If Left(arrCred(0), 1) <> "#" Then
-		
+	If Left(ThisLine, 1) <> "#" Then
+		arrCred = Split(ThisLine, ",")  ' Find Credentials in the file
+		strComputer = arrCred(1)
+			
 		' Connect to the WMI service
-		Set objWMIService = Locator.ConnectServer(strComputer, "root\cimv2", arrCred(4) & "\" & arrCred(2), arrCred(3))
-
-		strShareName = CheckShare(strDestPath, usrShareName) 'Look for the share, create if it doesn't exist.
-
-		strUNCPath = "\\" & strComputer & "\" & strShareName 'build the unc path
+		Set objWMIService = Locator.ConnectServer(strComputer, "root\cimv2", _
+			arrCred(4) & "\" & arrCred(2), arrCred(3))
 		
-		myExecute = "net use " & strUNCPath & " /user:" & arrCred(4) & "\" & arrCred(2) & " " & arrCred(3)
-		set WshShell = CREATEOBJECT("WScript.Shell")
-		Set oExec = WshShell.Exec(myExecute)
+		If Err.Number <> 0 Then
+			Wscript.Echo "Error connecting to " & strComputer & ".  " & Err.Description
+			Err.Clear
+		Else
+			strShareName = CheckShare(strDestPath, usrShareName) 'Look for the share, create if it doesn't exist.
 
-		Do While oExec.Status = 0
-			WScript.Sleep 100
-		Loop
+			strUNCPath = "\\" & strComputer & "\" & strShareName 'build the unc path
+			
+			myExecute = "net use " & strUNCPath & " /user:" & arrCred(4) & "\" & arrCred(2) & " " & arrCred(3)
+			set WshShell = CREATEOBJECT("WScript.Shell")
+			Set oExec = WshShell.Exec(myExecute)
 
-		If Not oFSO.FileExists(SourceScriptFile) Then
-			Wscript.Echo "Source Script File does not exist, exiting." 
-			Wscript.Quit
-		End If 
-		
-		Set srcScriptFile = oFSO.OpenTextFile(SourceScriptFile, ForReading) 'open source script file
-		Set dstScriptFile = oFSO.OpenTextFile(strUNCPath & "\" & oFSO.GetFileName(SourceScriptFile), ForWriting, True) 'open destination script file
-		
-		Wscript.Echo strComputer
-		dstScriptFile.Write(srcScriptFile.ReadAll) 'Create the script file on the remote server
+			Do While oExec.Status = 0
+				WScript.Sleep 100
+			Loop
 
-		srcScriptFile.Close
-		dstScriptFile.Close
-		
-		Set oWMIProcess = objWMIService.Get("Win32_Process") 
-		intReturn = oWMIProcess.Create(strDestPath & SourceScriptFile, Null, Null, intProcessID)
-		
-		If intReturn <> 0 Then 'Error
-			Wscript.Echo "Process could not be created." & _
-				vbNewLine & "Command line: " & strCommand & _
-				vbNewLine & "Return value: " & intReturn
-		Else 'No Error, wait for completion
-			WScript.Sleep 1000
-			Set colMonitoredProcesses = objWMIService.ExecNotificationQuery _
-				("Select * From __InstanceDeletionEvent Within 1 Where TargetInstance ISA 'Win32_Process'")
+			If Not oFSO.FileExists(SourceScriptFile) Then
+				Wscript.Echo "Source Script File does not exist, exiting." 
+				Wscript.Quit
+			End If 
+			
+			Set srcScriptFile = oFSO.OpenTextFile(SourceScriptFile, ForReading) 'open source script file
+			Set dstScriptFile = oFSO.OpenTextFile(strUNCPath & "\" & oFSO.GetFileName(SourceScriptFile), ForWriting, True) 'open destination script file
+			
+			Wscript.Echo strComputer
+			dstScriptFile.Write(srcScriptFile.ReadAll) 'Create the script file on the remote server
 
-			Do Until i = 1
-				Set objLatestProcess = colMonitoredProcesses.NextEvent
-				If objLatestProcess.TargetInstance.ProcessID = intProcessID Then
-					i = 1
+			srcScriptFile.Close
+			dstScriptFile.Close
+			
+			Set oWMIProcess = objWMIService.Get("Win32_Process") 
+			intReturn = oWMIProcess.Create(strDestPath & SourceScriptFile, Null, Null, intProcessID)
+			
+			If intReturn <> 0 Then 'Error
+				Wscript.Echo "Process could not be created." & _
+					vbNewLine & "Command line: " & strCommand & _
+					vbNewLine & "Return value: " & intReturn
+			Else 'No Error, wait for completion
+				
+				'Set colMonitoredProcesses = objWMIService.ExecNotificationQuery _
+				'	("Select * From __InstanceDeletionEvent Within 1 Where TargetInstance ISA 'Win32_Process'")
+
+				'Do Until i = 1
+				'	Set objLatestProcess = colMonitoredProcesses.NextEvent
+				'	If objLatestProcess.TargetInstance.ProcessID = intProcessID Then
+				'		i = 1
+				'	End If
+				'Loop
+				
+				'Move back results
+				retrieveFile = strUNCPath & "\" & strDate & "_OpenPorts.txt"
+				
+				If Not oFSO.FolderExists(LogDirectory) Then
+					oFSO.CreateFolder(LogDirectory)
 				End If
+				
+				Do  
+					WScript.Sleep 100
+				Loop Until oFSO.FileExists(retrieveFile)
+				
+				'If oFSO.FileExists(retrieveFile) Then
+					oFSO.CopyFile retrieveFile, LogDirectory & "\" & strDate & "_" & strComputer & "_OpenPorts.txt"
+				'Else 
+				'	wscript.echo retrieveFile & " does not exist."
+				'End If
+				
+				'Delete/Remove Evidence
+				oFSO.DeleteFile(retrieveFile)
+				oFSO.DeleteFile(strUNCPath & "\" & oFSO.GetFileName(SourceScriptFile))
+				
+				' Remove the share if we created it.
+				If strShareName = usrShareName Then
+					Set colShares = objWMIService.ExecQuery("SELECT * FROM Win32_Share WHERE name = '" & usrShareName & "'")  'Look for an existing share in the target directory
+					
+					For Each Share in colShares
+						Share.Delete()
+					Next
+					
+					Set colShares = Nothing
+				End If
+			End If
+
+			myExecute = "net use " & strUNCPath & " /delete /y"
+			Set oExec = WshShell.Exec(myExecute)
+
+			Do While oExec.Status = 0
+				WScript.Sleep 100
 			Loop
 			
-			'Move back results
-			retrieveFile = strUNCPath & "\" & strDate & "_OpenPorts.txt"
-			
-			If Not oFSO.FolderExists(LogDirectory) Then
-				oFSO.CreateFolder(LogDirectory)
-			End If
-			
-			If oFSO.FileExists(retrieveFile) Then
-				oFSO.CopyFile retrieveFile, LogDirectory & "\" & strDate & "_" & strComputer & "_OpenPorts.txt"
-			Else 
-				wscript.echo retrieveFile & " does not exist."
-			End If
-			
-			'Delete/Remove Evidence
-			oFSO.DeleteFile(retrieveFile)
-			oFSO.DeleteFile(strUNCPath & "\" & oFSO.GetFileName(SourceScriptFile))
-			
-			' Remove the share if we created it.
-			If strShareName = usrShareName Then
-				Set colShares = objWMIService.ExecQuery("SELECT * FROM Win32_Share WHERE name = '" & usrShareName & "'")  'Look for an existing share in the target directory
-				
-				For Each Share in colShares
-					Share.Delete()
-				Next
-				
-				Set colShares = Nothing
-			End If
-			
+			Set objWMIService = Nothing		
 		End If
-		
-		myExecute = "net use " & strUNCPath & " /delete /y"
-		Set oExec = WshShell.Exec(myExecute)
-
-		Do While oExec.Status = 0
-			WScript.Sleep 100
-		Loop
-		
-		Set objWMIService = Nothing
-	Else
-	
-		Wscript.Echo "Skipping"
 	End If
 Loop
 
