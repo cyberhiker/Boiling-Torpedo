@@ -11,6 +11,9 @@
 '
 '***************************************************************************
 
+'Format date for log file.
+Const strDate = Year(Now()) & "-" & Right("0" & Month(Now()), 2) & "-" & Right("0" & Day(Now()), 2)
+
 '*************************************************************************** 
 ' BEGIN USER VARIABLES
 '***************************************************************************
@@ -32,15 +35,16 @@ InactiveOnlyReport = True
 
 ' Log file path (include trailing \ ) 
 ' Use either full directory path or relational to script directory 
-strLogPath=".\logs\"
+strLogPath="C:\StaleAccountsLog\" & strDate & "\"
 
-' Error log file name prefix (tab delimited text file. 
-' Name will be appended with date and .err extension) 
-strErrorLog="DisabledAccounts_"
+' Error log file name prefix (tab delimited text file).
+strErrorLog="ErrDisabledAccounts_"
 
-' Output log file name prefix (tab delimited text file. 
-'Name will be appended with date and .log extension)
+' Output log file name prefix (tab delimited text file).
 strOutputLog="DisabledAccounts_"
+
+' Log file extension
+strExt=".tsv"
 
 '*************************************************************************** 
 ' END USER VARIABLES 
@@ -58,16 +62,14 @@ If sComputer = "" Then
 	sComputer = wshShell.ExpandEnvironmentStrings( "%COMPUTERNAME%" )
 End If
 
-'Format date for log file.
-strDate = Year(Now()) & "-" & Right("0" & Month(Now()), 2) & "-" & Right("0" & Day(Now()), 2) & "_" & sComputer
 Set oFSO=CreateObject("Scripting.FileSystemObject")
 
 'If the log file path does not exist, create it.
 If Not oFSO.FolderExists(strLogPath) Then oFSO.CreateFolder(strLogPath)
 
 'Setup for Log files to be written to.
-Set output=oFSO.CreateTextFile(strLogPath & strOutputLog & strDate & ".log.tsv")
-Set errlog=oFSO.CreateTextFile(strLogPath & strErrorLog & strDate & ".err.tsv")
+Set output=oFSO.CreateTextFile(strLogPath & strOutputLog & "_" & sComputer & strExt)
+Set errlog=oFSO.CreateTextFile(strLogPath & strErrorLog & "_" & sComputer & strExt)
 
 'Setup Headers in the Log Files
 output.WriteLine "Account Name" & vbTab & "Last Logon Date" & vbTab & "Number of Days"
