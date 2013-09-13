@@ -1,3 +1,4 @@
+'On Error Resume Next
 '***********************
 'VBScript
 '***********************
@@ -23,47 +24,57 @@ specDays = colNamedArguments.Item("d")
 
 If specDays <> "" Then
 	For i = 1 to Len(specDays)
-		If Chr(Mid(specDays, i, 1)) < 48 Or Chr(Mid(specDays, i, 1)) > 57 Then
+		ThisChar = Mid(specDays, i, 1)
+		If Asc(ThisChar) < 48 Or Asc(ThisChar) > 57 Then
 			Wscript.Echo "/d was not specified as a number" 
 			Wscript.Quit(1)
 		End If 
 	Next
-	
-	Wscript.Echo "Command line switch sets days to " & specDays & "."
 	daysAgo = specDays
+	Wscript.Echo "Command line switch sets days to " & daysAgo & "."
+	
 Else
-	Wscript.Echo "Command line switch unset, using " & specDays & "."
+	Wscript.Echo "Command line switch unset, using " & daysAgo & "."
 End If
 
 ' Check for command argument for folder path
 specDir = colNamedArguments.Item("f")
 
 If specDir <> "" Then
-	Wscript.Echo "Command line switch sets base folder to " & specDir & "."
 	dirPath = specDir
+	Wscript.Echo "Command line switch sets base folder to " & dirPath & "."
 Else
-	Wscript.Echo "Command line switch unset, using " & specDir & "."
+	Wscript.Echo "Command line switch unset, using " & dirPath & "."
 End If
 
 ' Validation complete, proceed with actual processing.
 
 Set f = fs.GetFolder(dirPath)
-Set fc = f.Files
 
 dateBefore = Now() - daysAgo
 
-For Each ff in fc
-	fileName = ff.Name
-	fileDate = ff.DateLastModified
+GoSubFolders(f)
 
-	If fileDate < dateBefore Then
-		Wscript.Echo "Deleting " & fileName
-		fs.DeleteFile(dirPath & "\" & fileName)
-	End If
-Next
+Sub DeleteFiles(oDir)
+	For Each File in oDir.Files
+		On Error Resume Next
+		
+		If File.DateLastModified < dateBefore Then
+			Wscript.Echo "Deleting " & File.Name
+			fs.DeleteFile(File.Path)
+		End If
+		
+	Next
+End Sub
+	
+Sub GoSubFolders(oDir)
+	DeleteFiles(oDir)
+	
+	For Each Folder in oDir.SubFolders
+		GoSubFolders(Folder)
+	Next
+End Sub
 
-Set fc = Nothing
-Set f = Nothing
 Set colNamedArguments = Nothing
 Set w = Nothing
 Set fs = Nothing
