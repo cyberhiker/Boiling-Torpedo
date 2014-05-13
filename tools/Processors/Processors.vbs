@@ -10,27 +10,19 @@
 '
 '***************************************************************************
 
-'Format date for log file.
-'Const strDate = Year(Now()) & "-" & Right("0" & Month(Now()), 2) & "-" & Right("0" & Day(Now()), 2)
-
 '*************************************************************************** 
 ' BEGIN USER VARIABLES
 '***************************************************************************
 
-'
-
 ' Log file path (include trailing \ ) 
 ' Use either full directory path or relational to script directory 
-strLogPath="C:\StaleAccountsLog\" & strDate & "\"
-
-' Error log file name prefix (tab delimited text file).
-strErrorLog="ErrDisabledAccounts_"
+strLogPath=""
 
 ' Output log file name prefix (tab delimited text file).
-strOutputLog="DisabledAccounts_"
+strOutputLog="ProcessorInfo"
 
 ' Log file extension
-strExt=".tsv"
+strExt=".csv"
 
 '*************************************************************************** 
 ' END USER VARIABLES 
@@ -44,22 +36,30 @@ Set colNamedArguments = WScript.Arguments.Named
 sComputer = colNamedArguments.Item("s")
 inputFileName = colNamedArguments.Item("i")
 
+Dim aCPUs, iAllCPUs, iTrueCPUs 
+Dim strCPUName, iClockSpeed, message 
+aCPUs = Array() 
+
 'If a remote computer is not specified, look at local. 
 If sComputer = "" Then
 	Set wshShell = WScript.CreateObject("WScript.Shell")
-	sComputer = wshShell.ExpandEnvironmentStrings( "%COMPUTERNAME%" )
+	sComputer = wshShell.ExpandEnvironmentStrings("%COMPUTERNAME%")
 End If
 
 Set oFSO=CreateObject("Scripting.FileSystemObject")
 'If the log file path does not exist, create it.
-If Not oFSO.FolderExists(strLogPath) Then oFSO.CreateFolder(strLogPath)
+'If Not oFSO.FolderExists(strLogPath) Then oFSO.CreateFolder(strLogPath)
 
 'Setup for Log files to be written to.
-Set output=oFSO.CreateTextFile(strLogPath & strOutputLog & "_" & sComputer & strExt)
-Set errlog=oFSO.CreateTextFile(strLogPath & strErrorLog & "_" & sComputer & strExt)
+Set output=oFSO.CreateTextFile(strLogPath & strOutputLog & strExt)
+
+Header = "IP Address,Processor Name,Architecture,Cores,Processors,Speed,RAM"
+output.Writeline Header
+wscript.echo Header
 
 If inputFileName = "" Then
 	
+	Wscript.Echo "Attempting to interrogate " & sComputer
 	Set objWMIService = GetObject("winmgmts:\\" & sComputer & "\root\cimv2")
 	DoThing(objWMIService)
 	Set objWMIService = Nothing
@@ -77,10 +77,10 @@ Else
 				
 				Set objSWbemLocator = CreateObject("WbemScripting.SWbemLocator")
 				On Error Resume Next
-				Wscript.Echo "Attempting to connect to " & strComputer
 				
 				Set objWMIService = objSWbemLocator.ConnectServer(strComputer,"root\cimv2",strUserName,strPassword)
-				If Err.Number > 0 Then
+				If Err <> 0 Then
+					Output.WriteLine strComputer & ",Access Denied"
 					Wscript.Echo "Couldn't connect to " & strComputer
 					Err.Clear
 				End If
@@ -99,25 +99,34 @@ End If
 Set output = Nothing
 Set errlog = Nothing
 
-Sub DoThing(oWMIService)
-	
-	'Interrogate Processors
-	Set colItems = oWMIService.ExecQuery("Select Description, ExtClock, L2CacheSize, " &_
-		"Name, MaxClockSpeed, SocketDesignation from Win32_Processor",,48)
 
-	i = 0
-	For Each objItem in colItems
-		i = i + 1
-		Wscript.Echo "Name:				" & objItem.Name
-		Wscript.Echo "L2CacheSize:		" & objItem.L2CacheSize
-		Wscript.Echo "Description: 		" & objItem.Description
-		Wscript.Echo "Max Clock Speed:	" & objItem.MaxClockSpeed
-		Wscript.Echo ""
-	Next
+Sub DoThing(oWMI)
 	
-	Err.Clear
-
-	Set colItems = oWMIService.ExecQuery("Select BankLabel, Capacity, FormFactor, MemoryType from Win32_PhysicalMemory",,48)
+	Set colCPUs = oWMI.ExecQuery("SELECT Name, maxClockSpeed, SocketDesignation, Architecture FROM Win32_Processor where Status > 0") 
+	iAllCPUs = 0 
+	
+	For Each oCPU In colCPUs 
+		strCPUName = quote & trim(oCPU.name) & quote 
+		iClockSpeed =  oCPU.maxClockSpeed 
+		strArchitecture = funArch(oCPU.Architecture)
+		iAllCPUs = iAllCPUs +1 
+		AddToArray aCPUs, oCPU.SocketDesignation 
+	Next 
+	
+	iTrueCPUs = UBound(aCPUs) + 1 
+	
+	Dim strS, strClockSpeed 
+	
+	If iTrueCPUs  > 1  Then strS = "s" 
+	
+	If Len(iClockSpeed) > 3 Then 
+		iClockSpeed =  round((iClockSpeed/1000),2) 'switch to Ghz. 
+		strClockSpeed = iClockSpeed & " Ghz" 
+	Else 
+		strClockSpeed = iClockSpeed & " Mhz" 
+	End If
+	
+	Set colItems = oWMI.ExecQuery("Select BankLabel, Capacity, FormFactor, MemoryType from Win32_PhysicalMemory",,48)
 
 	TotalRam = 0
 	For Each objItem In colItems
@@ -128,10 +137,19 @@ Sub DoThing(oWMIService)
 		TotalRam = TotalRam + objItem.Capacity
 	Next
 
+	strRam = ReturnBytes2Gigabytes(TotalRam) & " GB"
 	Wscript.Echo "RAM Size:		" & ReturnBytes2Gigabytes(TotalRam) & " GB"
+	
+	'"IP,Processor Name,Architecture,Processors,Cores,Speed,RAM"
+	outLine = strComputer & "," & strCPUName & "," & strArchitecture & "," & iAllCPUs & "," & iTrueCPUs & "," & strClockSpeed & "," & strRam
+	output.Writeline outLine
+	
+	Wscript.Echo outLine
+	
 	Set oWMIService = Nothing
 	
 End Sub
+
 '***************************************************************************
 ' END MAIN CODE
 '***************************************************************************
@@ -156,6 +174,41 @@ Function ReturnBytes2Gigabytes(nBytes)
 	End If
 	ReturnBytes2Gigabytes = nGigabytes
 End Function ' ReturnBytes2Gigabytes
+
+Function funArch(intIN)
+	Select Case intIN
+		Case 0
+			funArch = "x86"
+		Case 1
+			funArch = "MIPS"
+		Case 2
+			funArch = "Alpha"
+		Case 3
+			funArch = "PowerPC"
+		Case 6
+			funArch = "Intel Itanium Processor Family (IPF)"
+		Case 9
+			funArch = "x64"
+		Case Else
+			funArch = "Unable to determine processor type"
+	End Select
+End Function
+
+Sub AddToArray(aList, NewItem) 'check for new items 
+ Dim ItemFound 
+ For i = LBound(aList) to UBound(aList) 
+    If aList(i) = NewItem Then 
+       ItemFound = True 
+       Exit For 
+    End If 
+ Next 
+  
+ If Not ItemFound Then 
+    ReDim Preserve aList(Ubound(aList) + 1) 
+    alist(i)=newitem 
+       WScript.Echo "Added " & Newitem & " to array"
+ End If 
+End Sub 
 
 '***************************************************************************
 ' END SUBROUTINES

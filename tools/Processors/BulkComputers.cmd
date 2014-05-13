@@ -9,7 +9,7 @@ for /F "tokens=1-4 delims=," %%a in (%1) do (
 	
 	net use \\%%a\ipc$ /persistent:no /user:%%d\%%b %%c
 	
-	cscript //nologo StaleAccounts.vbs /s:%%a
+	cscript //nologo Processors.vbs /s:%%a
 	
 	net use \\%%a\ipc$ /delete /y
 
