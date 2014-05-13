@@ -1,0 +1,11 @@
+I had a need to be able to look for user accounts on a Windows system and disable them if I needed to.
+
+You can run this on any Windows machine from 2000 forward, Server or Workstation (AFAIK).
+
+Run on a local machine by doing: cscript StaleAccounts.vbs
+
+Run on a remote machine by doing: cscript StaleAccounts.vbs /s:<ServerName>
+
+If you point it at a domain controller, it will probably do the whole AD.  I have also provided a means to do a great many 
+machines in an unattended fashion.  This is the combination of the CMD file and the CSV file.  Both should be self 
+explanatory.
